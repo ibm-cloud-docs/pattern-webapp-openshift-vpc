@@ -13,7 +13,7 @@ toc:
     href: /docs/pattern-webapp-openshift-vpc
     path: pattern-webapp-openshift-vpc
     description: Web application on Openshift VPC single region multizone deployment following well architected framework conver cluster storage, network and security design and best practices.
-    label: Deploying web application on Openshift in a MZR in IBM Cloud
+    label: Deploying web application on Openshift in a MZR on IBM Cloud
 
   entries:
   - navgroup:

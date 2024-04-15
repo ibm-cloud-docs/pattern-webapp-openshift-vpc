@@ -2,46 +2,33 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-04-11"
 
-subcollection: <repo-name>
+subcollection: web-application-on-openshift-vpc
 
 keywords:
 
 ---
 
-# Architecture decisions for resiliency
-{: #resiliency-architecture}
+## Architecture decisions for resiliency
 
-The following sections summarize the resiliency architecture decisions for workloads deployed on IBM Cloud VPC infrastructure.
+The following are resiliency architecture decisions for the Red Hat OpenShift on VPC cluster design.
 
-## Architecture decisions for high availability
-{: #high-availability}
+| **Architecture decision** | **Requirement**                                                                                              | **Alternative**                                                                                                                                                                                                                                                                                       | **Decision**                                 | **Rationale**                                                                                                                                                                                                                                                                                                                           |
+|---------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| High Availability         | -Ensure availability of resources in the event of outages.  Support SLA targets for application availability | - [Single-zone cluster](https://cloud.ibm.com/docs/openshift?topic=openshift-ha_clusters) - [Multi-zone cluster](https://cloud.ibm.com/docs/openshift?topic=openshift-ha_clusters) - [Multiple single-zone clusters in one region](https://cloud.ibm.com/docs/openshift?topic=openshift-ha_clusters)  | - Multizone clusters (3 availability zones)  | - Built-in high availability leveraging 3 availability zones within a region protects against zone failures. - Minimum of 2 worker nodes on each zone (total of 6 worker nodes) required to meet IBM Cloud 99.99% SLA. - Each zone configured with 50% of required CPU capacity to provide 100% capacity in the event of a zone failure |
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| High availability deployment | * Ensure availability of resources if outages occur. \n * Support SLA targets for availability. | - Single zone, single region \n - Multi zone, single region \n - Multi-zone, multi region | text | text|
-| High availability infrastructure | * Ensure availability of infrastructure resources if outages occur. \n * Support SLA targets for infrastructure availability. | text | text | text|
-| High availability application and database | * Ensure availability of application resources if outages occur. \n * Support SLA targets for application availability. | text | text | text|
-{: caption="Table 1. High availability architecture decisions" caption-side="bottom"}
+## Architecture decisions for service management
 
-## Architecture decisions for backup and restore
-{: #backup-and-restore}
+The following are service management architecture decisions for the Red Hat OpenShift on VPC cluster design.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Infrastructure backup  | Backup images to enable recovery. | text | text | text |
-| Database backup | Create transaction-consistent database backups to enable recovery of database tier if unplanned outages occur. |text | text | text |
-| File backup | Create file system backups |text | text | text |
-| Backup automation | Schedule regular database backups based on RPO requirements to enable data recovery if unplanned outages occur. |text | text | text |
-{: caption="Table 2. Backup and restore architecture decisions" caption-side="bottom"}
+| **Architecture decision**                      | **Requirement**                                                                                                                                                 | **Alternative**                                                                | **Decision**                                                       | **Rationale**                                                                                                                                                                                                                                                                                     |
+|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Operational Monitoring of Web, App, DB Servers | Monitor system and app health to determine need to failover to alternate site.   Operational metrics include CPU and memory usage, API response times, etc.     | - IBM Cloud Monitoring - BYO Monitoring Tool                                   | IBM Cloud Monitoring                                               | - IBM Cloud Monitoring collects and monitors operational metrics for cloud infrastructure as well as cloud platform and services and provides a single view for all metrics                                                                                                                       |
+| Operational Monitoring for Web App             |                                                                                                                                                                 | - IBM Cloud Monitoring - Instana (SaaS) - Bring Your Own (BYO) Monitoring Tool | IBM Cloud Monitoring + Instana (SaaS)                              | - Use Instana along with IBM Cloud Monitoring to get additional application performance metrics and automate application performance management for the Web, App, and Database tiers. Instana provides data and actionable insights to monitor the applications and automate root-cause analysis. |
+| Logs Monitoring for Web, App, DB Servers       | Monitor operational logs to detect issues that might impact the availability of the system and app                                                              | - IBM Cloud Logging - BYO Logging Tool                                         | IBM Cloud Logging                                                  | - IBM Logging collects operational logs from applications, platform resources, and infrastructure and provides interfaces to view and analyze all logs.                                                                                                                                           |
+| Logs Monitoring for Web App                    |                                                                                                                                                                 | - IBM Cloud Logging - Application Logging - BYO Logging Tool                   | IBM Cloud Logging + Application Logging                            | - Application logs can be sent to IBM Cloud Logging to get more application-specific logs                                                                                                                                                                                                         |
+| Audit Logging                                  | Monitor audit logs to track changes to cloud resources and detect potential security problems                                                                   | IBM Cloud Activity Tracker - Hosted Event Search - Event Routing               | IBM Cloud Activity Tracker- Hosted Event Search                    | IBM Cloud Activity Tracker-Hosted Event Search provides interfaces to capture, store, view, search, and monitor user-initiated actions to provision, access, and manage IBM Cloud resources.                                                                                                      |
+| Operational alerts                             | - Provide a mechanism to identify and send notifications about operational issues found across application and infrastructure                                   | IBM Cloud Monitoring +  IBM Cloud Logging + Event Notifications                | IBM Cloud Monitoring +  IBM Cloud Logging + Event Notifications    | - IBM Cloud Monitoring and IBM Cloud Logging support the configuration of alerts to detect operational issues and send notifications to targeted channels.  Event Notifications can be used to route the alert events to service destinations to automate response actions.                       |
+| Audit alerts                                   | - Provide a mechanism to identify and send notifications about issues found in audit logs                                                                       | IBM Cloud Activity Tracker + IBM Monitoring +  Event Notifications             | IBM Cloud Activity Tracker + IBM Monitoring +  Event Notifications | - IBM Activity Tracker supports the configuration of alerts to detect audit issues and send notifications to targeted channels.  Event Notifications can be used to route the alert events to service destinations to automate response actions.                                                  |
 
-## Architecture decisions for disaster recovery
-{: #disaster recovery}
-
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Disaster recovery - application | Application disaster recovery capability in secondary region to meet RTO/RPO requirements| text | text | text |
-| Disaster recovery - database                        | Database recovery capability in secondary region | text | Continuous replication of data from a primary to a secondary system in a separate region, including in-memory loading, system replication facilitates rapid failover in the event of a disaster|
-| Disaster recovery - infrastructure | Infrastructure disaster recovery capability in secondary region to meet RTO/RPO requirements| text | text | text |
-{: caption="Table 2. Disaster recovery architecture decisions" caption-side="bottom"}

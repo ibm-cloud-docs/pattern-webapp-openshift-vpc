@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-04-11"
 
-subcollection: <repo-name>
+subcollection: web-application-on-openshift-vpc
 
 keywords:
 
@@ -12,87 +12,58 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture decisions for networking
-{: #networking-architecture}
+# Network design
 
-<!-- Below is a placeholder for all compute domain decisions.  Remove the domains that are not in scope.  If there are decisions
-that need to be added (e.g. platform dependent) add additional rows-->
+![A diagram of a computer Description automatically generated](image/2b4a6209bfdd026fbdbe4b80d5a0613d.jpg)
 
-The following tables summarize the networking architecture decisions for the web app multi-zone resiliency pattern.
+-   HomeDIY Commerce system is a web application accessible from web browsers, mobile applications, and other connected apps via IBM Cloud Internet Services (CIS). It acts as a global load balancer with the CDN (Content Delivery Network), Web Application Firewall (WAF), and Distributed Denial of Service (DDoS) capabilities.
+-   Only HTTPS traffic (Port 443) is allowed through CIS.
+-   The operations/System Admin team that manages this system accesses various environments via a secure Virtual Private Network (VPN) connection that allows SSH-only connection (Port 22).
+-   For a website request (1), the CIS forwards to the ICOS where the static website is hosted.
+-   For an API request, the CIS forwards to a load balancer
+-   For a website request, the static web application hosted in IBM Cloud Object Storage (ICOS) propagated in Point of Presence (POP locations gets served via Content Delivery Network (CDN).
+-   Ideally, the static web application in ICOS is hosted in a public internet-facing network segment as these are the only internet-facing workloads.
+-   The API request (from static websites and mobile apps) (2) reaches the Back End For Frontend (BFF) microservices hosted in Red Hat OpenShift on IBM Cloud (ROKS) cluster deployed in a Virtual Private Cloud (VPC).
+-   A network load balancer (3) distributes the traffic across the ROKS worker nodes spread across the multiple availability zones.
+-   As per the routes (4) in the ROKS cluster, the traffic is then forwarded to the appropriate Kubernetes service which caters to the business logic in a Kubernetes pod as a microservice.
+-   The business logic written as Back End For Front End (BFF) microservices is the data access layer for the application. They access the backend and handle sensitive user data for the application.
+-   Ideally, the business logic / BFF deployed in ROKS clusters are in a private network segment. Meaning there is no direct internet access is allowed.
+-   The workloads based on their type can be deployed in the ROKS cluster using projects (5)(namespaces). For example, the back-end for frontend microservices can be deployed in a project named “prod-bff-microservices”, in the case of non-production environments the project can be named “dev-bff-microservicss” or “test-bff-microservices”.
+-   By default, in ROKS the communication across the workloads in different projects is open.
 
-## Architecture decisions for enterprise connectivity
-{: #enterprise-connectivity}
+    By applying appropriate Kubernetes network policies, communication within the workloads can be allowed or restricted.
 
-The following are architecture decisions for enterprise connectivity for this design.
+-   The Red Hat OpenShift service mesh (6) controls service-to-service communication in a microservices architecture. It controls the delivery of service requests to other services, performs load balancing, encrypts data, and discovers other services.
+-   The connectivity to the other IBM Cloud services is via Virtual Private Endpoints (VPE) (7) within IBM Cloud.
+-   The production environment is deployed in a separate VPC with appropriate access via Network access control lists (ACLs) and security policies.
+-   The non-production environments deployed in a different VPC which can only be accessed by internal audiences like developers, testers, and the operations team.
+-   Deploying the environments in different ROKS clusters in different VPCs provides fine-grained segregation between networking, access privilege, and security to each of them.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Management connectivity | Provide secure, encrypted connectivity to the cloud’s private network for management purposes. | text | text | text. |
-| Enterprise connectivity | Provide connectivity between client enterprise and IBM Cloud. | text | text | text. |
-{: caption="Table 1. Architecture decisions for enterprise connectivity" caption-side="bottom"}
+![A diagram of a computer Description automatically generated](image/55f9ee84834c07de05839fd7fb39d2ce.jpg)
 
-## Architecture decisions for BYOIP and Edge Gateways
-{: #byoip-edge-gateways}
+The network design for the HomeDIY -commerce application follows a layered approachsegregation of responsibility. These layers help in identifying which workloads need to be public-facing and which need to be considered as secure and deployed in a private zone.
 
-The following are network BYOIP and edge gateay architecture decisions for this design.
+1.  Presentation Layer (Public Zone – Internet Facing Workload)
+2.  Integration Layer (Private Zone – Secure Workload)
+3.  Services Layer (Private Zone – Secure Workload)
+4.  Data access Layer (Private Zone – Secure Workload)
+5.  Data Storage Layer (Private Zone – Secure Workload)
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| BYOIP approach | Provide capability for bring your own IP (BYOIP) to IBM Cloud. | text | text | text |
-| Edge gateways | Capability to provide edge routing services and possible tunnel termination. | text | text | text |
-{: caption="Table 2. Architecture decisions for bring your own IP and edge gateways" caption-side="bottom"}
+**Public Zone – Internet Facing Workload**
 
-## Architecture decisions for network segmentation and isolation
-{: #network-segmentation-isolation}
+In a cloud deployment architecture, a Public Zone is a network segment placed between an organization's internal and external networks, typically the Internet. Its purpose is to provide additional security by isolating internet-facing services and workloads from the internal network, protecting sensitive data and critical systems from potential security threats originating from the internet.
 
-The following are network segmentation and isolation architecture decisions for this design.
+• The HomeDIY -commerce application's internet-facing static content (Presentation Layer) is deployed in IBM Cloud Object Storage (ICOS).
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Network segmentation and isolation | Ability to provide network isolation across workloads. | text | text | text |
-{: caption="Table 3. Architecture decisions for network segmentation and isolation" caption-side="bottom"}
+• Static contents like HTML, JavaScript, and Images/Videos are served from ICOS to internet users.
 
-## Architecture decisions for cloud native connectivity
-{: #cloud-native-connectivity}
+• All requests reaching ICOS are via Cloud Internet Services (CIS), which acts as a public/global load balancer with DDoS protection.
 
-The following are cloud native connectivity architecture decisions for this design.
+• CIS has multiple Point of Presence (PoP) locations for Content Delivery Network (CDN) capability, improving user experience and application performance.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Cloud native connectivity (to cloud services) | Provide secure connection to Cloud Services | * VPC Gateway + Virtual Private Endpoints (VPE) \n * Private Cloud Service endpoints \n * Public Cloud Service Endpoints | text | text |
-| Multi-landing zone connectivity | Connect two or more VPCs over a private network /n Connectectivity between classic, VPCs and/or Power Virutal Server| * Global Transit Gateway \n * Local Transit Gateway (TGW) | text | text |
-{: caption="Table 4. Architecture decisions for cloud native connectivity" caption-side="bottom"}
+• CDNs cache static content like images, stylesheets, and scripts on their servers, reducing the load on the origin server when users request these resources.
 
-## Architecture decisions for load balancing
-{: #network-load-balancing}
+In the Public Zone, organizations can strike a balance between offering external access to internet-facing services while maintaining the security and integrity of internal networks and sensitive data. This is crucial in cloud deployments where scalability and flexibility are essential for adapting to changing workloads and evolving security threats.
 
-The following are load balancing architecture decisions for this design.
+In the Public Zone, organizations can maintain a balance between providing external access to internet-facing services and ensuring the security and integrity of their internal networks and sensitive data. This approach is particularly crucial in cloud deployments, where scalable and flexible solutions are essential for adapting to dynamic workloads and evolving security threats.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Global load balancing | Load balancing over the public network across two regions in the event of an outage (DR) for failover to the other region. | text | text |text|
-| Load balancing (public) | Load balancing workloads across multiple workload instances or zones over the public network. | text | text |text|
-| Load balancing (private) | Load balancing workloads across multiple workload instances or zones over the private network. | text | text |text|
-{: caption="Table 5. Architecture decisions for load balancing" caption-side="bottom"}
-
-## Architecture decisions for content delivery network
-{: #network-content delivery network}
-
-The following are content delivery network architecture decisions for this design.
-
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Content delivery network | Provide ability to cache frequently accessed content at location nearest to the user | text | text | text |
-{: caption="Table 6. Architecture decisions for content delivery network" caption-side="bottom"}
-
-
-## Architecture decisions for domain name system
-{: #dns}
-
-The following are domain name system (DNS) architecture decisions for this design.
-
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Public DNS | Provide DNS resolution to support the use of hostnames instead of IP addresses for applications | text | text | text |
-| Private DNS | Provide DNS resolution within IBM Cloud's private network | text| text | text |
-{: caption="Table 7. Architecture decisions for domain name system" caption-side="bottom"}

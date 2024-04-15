@@ -1,18 +1,16 @@
 ---
-
 copyright:
   years: 2024
 lastupdated: "2024-04-11"
 
-subcollection: web-application-on-openshift-vpc
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
-
 ---
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Security design
+
 {: #security-design}
 
 ![A screenshot of a computer Description automatically generated](image/6ebac3a924e72be2aece22b10edc8763.png)
@@ -21,8 +19,8 @@ Manage cloud as code is designed to automate everything from application infrast
 
 Separation of environments follows principle of separation of duties and least privilege:
 
--   Separation of duties - No user should be given enough privileges to misuse the system on their own. No developer access to production.
-    -   Least privilege - restrict access privileges of authorized personnel to the minimum necessary to perform their jobs.
+- Separation of duties - No user should be given enough privileges to misuse the system on their own. No developer access to production.
+  - Least privilege - restrict access privileges of authorized personnel to the minimum necessary to perform their jobs.
 
 separate resource groups to isolate production and non-production environments. Within each resource group a landing zone is created using a VPC.
 
@@ -41,4 +39,3 @@ The web app encrypts data in transit by using TLS encryption. The Secrets Manage
 Key Protect is used to support data encryption with customer-provided keys to meet regulatory compliance requirements. Key Protect uses a shared FIPS 140-2 level 3 certified hardware security module (HSM) to store keys that are used by storage services for envelope encryption and is also used to offload TLS/SSL keys.
 
 App ID is used to add authentication and authorization for the mobile app connecting users from internet to Web application.
-

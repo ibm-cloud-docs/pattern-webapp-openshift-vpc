@@ -1,18 +1,15 @@
 ---
-
 copyright:
   years: 2024
 lastupdated: "2024-04-11"
 
-subcollection: web-application-on-openshift-vpc
-
+subcollection: pattern-webapp-openshift-vpc
 keywords:
-
 ---
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Resiliency design
+
 {: #resiliency-design}
 
 Please see the VPC resiliency architecture pattern \<here\>
@@ -37,10 +34,10 @@ Create a multizone cluster to distribute workloads across multiple worker nodes 
 
 Multizone clusters provide high availability and the following additional benefits:
 
--   Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
--   Guard against zone failure by spreading nodes evenly across the selected multizones and by using anti-affinity pod deployments for applications.
--   Decrease costs by using multizone clusters instead of duplicating the resources in a separate cluster.
--   Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically in each zone of the cluster. This was the selected deployment model for the E-commerce use case as it provides the required service level availability and workload management capabilities.
+- Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
+- Guard against zone failure by spreading nodes evenly across the selected multizones and by using anti-affinity pod deployments for applications.
+- Decrease costs by using multizone clusters instead of duplicating the resources in a separate cluster.
+- Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically in each zone of the cluster. This was the selected deployment model for the E-commerce use case as it provides the required service level availability and workload management capabilities.
 
 **Cross Regional Active-Active Cluster deployment**
 
@@ -58,7 +55,6 @@ To meet the Tier 3 SLA of 99.99%, deploy a multizone cluster and distribute the 
 
 # Service management design
 
-
 ### **Management and Monitoring**
 
 The recommended approach for multi cluster management and monitoring is to use IBM cloud tools including IBM Log Analysis and IBM Cloud Monitoring. This approach enables application cluster metrics log aggregation and central management within IBM Cloud.
@@ -67,23 +63,23 @@ The recommended approach for multi cluster management and monitoring is to use I
 
 Use IBM Log Analysis to add log management capabilities to Red Hat OpenShift VPC clusters and provide for:
 
--   Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.
--   Quick integration with the cluster via a script.
--   Aggregated logs across clusters and cloud providers.
--   Historical access to logs.
--   Highly available, scalable, and compliant with industry security standards.
--   Integrated with IBM Cloud IAM for user access management.
+- Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.
+- Quick integration with the cluster via a script.
+- Aggregated logs across clusters and cloud providers.
+- Historical access to logs.
+- Highly available, scalable, and compliant with industry security standards.
+- Integrated with IBM Cloud IAM for user access management.
 
 **IBM Cloud Monitoring**
 
 Use IBM Cloud Monitoring to monitor the performance and overall system health of Red Hat OpenShift VPC clusters and provide for:
 
--   Customizable user interface for a unified view of cluster metrics, container security, resource usage, alerts, and custom events.
--   Quick integration with the cluster via a script.
--   Aggregated metrics and container monitoring across clusters and cloud providers.
--   Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.
--   Highly available, scalable, and compliant with industry security standards.
--   Integrated with IBM Cloud IAM for user access management.
+- Customizable user interface for a unified view of cluster metrics, container security, resource usage, alerts, and custom events.
+- Quick integration with the cluster via a script.
+- Aggregated metrics and container monitoring across clusters and cloud providers.
+- Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.
+- Highly available, scalable, and compliant with industry security standards.
+- Integrated with IBM Cloud IAM for user access management.
 
 For more information on how to forward application and cluster metric data to IBM Cloud Monitoring see here: [https://cloud.ibm.com/docs/openshift?topic=openshift-health-monitor\#openshift_monitoring](https://cloud.ibm.com/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 

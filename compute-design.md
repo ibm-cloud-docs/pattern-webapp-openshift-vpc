@@ -1,17 +1,17 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-15"
 
-subcollection: web-application-on-openshift-vpc
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 ---
 {{site.data.keyword.attribute-definition-list}}
 
 # Compute design
-
 {: #compute-design}
+
 ![A screenshot of a computer Description automatically generated](image/4cf5692995f1a7f05097e1fcdf70b851.png)
 
 1. A VPC Landing Zone is deployed which provides the ability to automate the install of an OpenShift cluster into a multizone region.
@@ -23,7 +23,7 @@ keywords:
 7. By default, the cluster is provisioned with a VPC security group and a cluster-level security group.
 8. The OpenShift platform is integrated with IBM Cloud Services to provide centralized cluster observability services.
 
-## **Capacity planning for your Red Hat OpenShift cluster**
+**Capacity planning for your Red Hat OpenShift cluster**
 
 It is important to plan for the expected capacity of the Red Hat OpenShift deployment to ensure proper infrastructure sizing and resource availability.
 
@@ -39,7 +39,7 @@ Service, usability and application view which can include middleware, databases,
 
 Workload behavior patterns and forecasts can include: seasonal peaks for workloads, and event-driven increases such as market campaigns, mergers and acquisitions, and new project deployment.
 
-## Service Level Agreements (SLAs), high availability, resiliency and disaster recovery requirements.
+**Service Level Agreements (SLAs), high availability, resiliency and disaster recovery requirements**
 
 **Sizing your Red Hat OpenShift cluster environment**
 

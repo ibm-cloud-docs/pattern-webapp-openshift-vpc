@@ -10,7 +10,7 @@ keywords:
 
 # Service management design
 
-## **Management and Monitoring**
+**Management and Monitoring**
 
 The recommended approach for multi cluster management and monitoring is to use IBM cloud tools including IBM Log Analysis and IBM Cloud Monitoring. This approach enables application cluster metrics log aggregation and central management within IBM Cloud.
 

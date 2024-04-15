@@ -5,15 +5,15 @@
 toc:
   properties:
     subcollection: pattern-webapp-openshift-vpc
-    industry: industry-value
-    use-case: use-case-value
-    compliance: compliance-value
+    # industry: industry-value
+    use-case: Public cloud
+    # compliance: compliance-value
     audience: solution
     content-type: deployment
-    href: /docs/<pattern-webapp-openshift-vpc>
-    path: <pattern-webapp-openshift-vpc>
+    href: /docs/pattern-webapp-openshift-vpc
+    path: pattern-webapp-openshift-vpc
     description: Web application on Openshift VPC single region multizone deployment following well architected framework conver cluster storage, network and security design and best practices.
-    label: Pattern name
+    label: pattern-webapp-openshift-vpc
 
   entries:
   - navgroup:

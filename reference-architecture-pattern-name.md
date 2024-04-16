@@ -3,35 +3,14 @@ copyright:
 years: 2024
 lastupdated: "2024-04-12"
 
-keywords: # Not typically populated
-
-subcollection: # Use the subcollection value from your toc.yaml file. e.g. pattern-sap-on-vpc
-
 subcollection: webapplication-on-openshift-vpc
 
 keywords:
 # The release that the reference architecture describes
 
 authors:
-- name: Joe Kiernan, Sivarajan Ravisankar, Adam Geiger, Rob Tallotta, Gobinda Sahaa, David Long
-
-version: 1.0
-
-# Use if the reference architecture has deployable code.
-# Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
-deployment-url:
-
-docs: https://cloud.ibm.com/docs/pattern-webapplication-on-openshift-vpc
-
-content-type: reference-architecture
+- name: Joe Kiernan, Sivarajan Ravisankar, Adam Geiger, Rob Tallotta, Gobinda Sahaa, David Long.
 ---
-<!--
-The following line inserts all the attribute definitions. Don't delete.
--->
-
-{{site.data.keyword.attribute-definition-list}}
-
 <!--
 Don't include "reference architecture" in the following title.
 Specify a title based on a use case. If the architecture has a module
@@ -50,13 +29,11 @@ The IDs, such as {: #title-id} are required for publishing this reference archit
 the toc attributes on the H1, repeating the values from the YAML header.
  -->
 
-
 After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
 
 ## Architecture diagram `<!-- this is an H2 -->`
 
 {: #architecture-diagram}
-
 
 *Figure 1. Reference Architecture for cluster design of E-commerce microservices solution*
 

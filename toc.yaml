@@ -24,7 +24,7 @@ toc:
   - navgroup:
       id: architecture
       topics:
-      - reference-architecture-webapplication-on-openshift-vpc.md
+      - reference-architecture-pattern-name.md
 
   - navgroup:
       id: plan

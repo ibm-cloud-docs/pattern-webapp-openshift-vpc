@@ -18,7 +18,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
-# Reference architecture for Webapp on OpenShift on VPC `<!-- H1 -->`
+# Reference architecture for Webapp on OpenShift on VPC 
 
 {: #openshift-on-vpc}
 {: toc-content-type="reference-architecture"}
@@ -31,7 +31,7 @@ the toc attributes on the H1, repeating the values from the YAML header.
 
 After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
 
-## Architecture diagram `<!-- this is an H2 -->`
+## Architecture diagram
 
 {: #architecture-diagram}
 
@@ -53,7 +53,7 @@ Figure 2
 
 figure 2 detailed diagram description here
 
-## Design scope `<!-- H2 -->`
+## Design scope
 
 {: #design-scope}
 
@@ -79,7 +79,7 @@ generated](./image3.png)
 
 Figure 3
 
-## Requirements `<!-- H2 -->`
+## Requirements
 
 {: #requirements}
 
@@ -114,7 +114,7 @@ The following represents a baseline set of requirements which we believe are app
 |                                                                                                           | Customer does not want to adopt[RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation |
 | {: caption="Table 1. Requirements" caption-side="bottom"}  <!-- each table MUST have a caption attribute> |                                                                                                                                                                                                                                                                                                                                   |
 
-## Components `<!-- H2 -->`
+## Components
 
 {: #components}
 

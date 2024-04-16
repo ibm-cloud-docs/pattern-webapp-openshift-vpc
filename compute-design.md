@@ -80,7 +80,7 @@ In sizing the clusters for the HomeDIY use case use the following steps:
 
            **Use Case Sizing Decision:**
 
-- Three OpenShift clusters: (1) Production, (2) Pre-Prod and (3) Dev/Test
+      - Three OpenShift clusters: (1) Production, (2) Pre-Prod and (3) Dev/Test
 
 2. **Determine the workload resource requirements for environments.**
    1. Calculate the resource requirements for the in-scope environments based on the average transactions per second expected in production for the E-commerce application solution.
@@ -89,48 +89,48 @@ In sizing the clusters for the HomeDIY use case use the following steps:
 
       **Use Case Sizing Decision:**
 
-- Production Cluster: 70 vCPU required (20 microservices x 3.5 vCPU)
-- Pre-Prod Cluster: Match to Production
-- Non-Prod Cluster: 53 vCPU (@ 50% of prod = 35 vCPU; DEV @ 25% of prod = 18 vCPU). For the non-production environments, assumptions are single replicas with minimal transaction loads.
+ - Production Cluster: 70 vCPU required (20 microservices x 3.5 vCPU)
+ - Pre-Prod Cluster: Match to Production
+ - Non-Prod Cluster: 53 vCPU (@ 50% of prod = 35 vCPU; DEV @ 25% of prod = 18 vCPU). For the non-production environments, assumptions are single replicas with minimal transaction loads.
 
 3. **Determine additional services included within the cluster.**
    1. Additional services will be running within the clusters such as OpenShift Service Mesh and IBM Cloud Monitoring agents. For the sizing estimation assume adding 10% to the E-commerce application worker pool.
 
       **Use Case Sizing Decision (compute worker pool):**
 
-- Production Cluster: 77 vCPU required (70 vCPU \* 1.1)
-- Pre-Prod Cluster: Match to Production
-- Cluster: 58 vCPU (53 vCPU \* 1.1)
+ - Production Cluster: 77 vCPU required (70 vCPU \* 1.1)
+ - Pre-Prod Cluster: Match to Production
+ - Cluster: 58 vCPU (53 vCPU \* 1.1)
 
-1. One of the client requirements for the solution is highly available persistent storage. There are stateful applications and a containerized Redis database is being used for event store and message queue purposes.
-2. To meet this requirement the IBM Cloud [Portworx Enterprise](https://cloud.ibm.com/catalog/services/portworx-enterprise) service will be utilized which will provide a software defined storage solution for the E-commerce workload and a separate worker pool will be used for the storage nodes. This will allow for disaggregated scaling of the E-commerce worker nodes to meet demand changes and will be provisioned for each cluster.
-3. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+ 1. One of the client requirements for the solution is highly available persistent storage. There are stateful applications and a containerized Redis database is being used for event store and message queue purposes.
+ 2. To meet this requirement the IBM Cloud [Portworx Enterprise](https://cloud.ibm.com/catalog/services/portworx-enterprise) service will be utilized which will provide a software defined storage solution for the E-commerce workload and a separate worker pool will be used for the storage nodes. This will allow for disaggregated scaling of the E-commerce worker nodes to meet demand changes and will be provisioned for each cluster.
+ 3. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 
    **Use Case Sizing Decision (storage worker pool):**
 
-- A separate storage worker pool of three 4 vCPU x 16 GB memory worker nodes is added to the three OpenShift clusters.
-- *Note: The worker node sizing represents a minimum worker node flavor for Portworx and specific deployment strategy and sizing is not considered under this pattern.*
+ -   A separate storage worker pool of three 4 vCPU x 16 GB memory worker nodes is added to the three OpenShift clusters.
+ -   *Note: The worker node sizing represents a minimum worker node flavor for Portworx and specific deployment strategy and sizing is not considered under this pattern.*
 
 4. **Determine the optimal worker node size and quantity for the E-commerce worker pool.**
-   1. For cost and management optimization we are choosing 16 vCPU x 64 GB flavor worker nodes.
-   2. For pod scheduling and performance considerations we are limiting the resource available to the application workload to 75% of the work node vCPU capacity.
+     1. For cost and management optimization we are choosing 16 vCPU x 64 GB flavor worker nodes.
+     2. For pod scheduling and performance considerations we are limiting the resource available to the application workload to 75% of the work node vCPU capacity.
 
       **Use Case Sizing Decision:**
 
-- Production Cluster: Seven 16 vCPU x 64 GB worker nodes (16 vCPU (node capacity) \* .75 (reserve capacity) = 12 vCPU. 77 vCPU (compute workload resource requirement) / 12 = 7 (worker nodes rounded up)
-- Pre-Prod Cluster: Match to Production
-- Non-Production Cluster: Five 16 vCPU x 64 GB worker nodes (16 vCPU (node capacity) \* .75 (reserve capacity) = 12 vCPU. 58 vCPU (compute workload resource requirement) / 12 = 5 (worker nodes rounded up)
+ - Production Cluster: Seven 16 vCPU x 64 GB worker nodes (16 vCPU (node capacity) \* .75 (reserve capacity) = 12 vCPU. 77 vCPU (compute workload resource requirement) / 12 = 7 (worker nodes rounded up)
+ - Pre-Prod Cluster: Match to Production
+ - Non-Production Cluster: Five 16 vCPU x 64 GB worker nodes (16 vCPU (node capacity) \* .75 (reserve capacity) = 12 vCPU. 58 vCPU (compute workload resource requirement) / 12 = 5 (worker nodes rounded up)
 
 5. **Determine your cluster sizing accounting for resiliency requirements including high availability and SLA targets.**
-   1. For resiliency we are planning for the total capacity of the production and pre-prod clusters to be at least 150% of the total workload's required capacity, so that if one zone goes down, we have resources available to maintain the workload.
-   2. The client availability requirements for the Red Hat OpenShift service availability are 99.99% which requires our production cluster to have a minimum of 6 worker nodes in a multizone cluster across three availability zones (two worker nodes per AZ). This provides for high availability for the application replicas within an availability zone as well as regionally.
+     1. For resiliency we are planning for the total capacity of the production and pre-prod clusters to be at least 150% of the total workload's required capacity, so that if one zone goes down, we have resources available to maintain the workload.
+     2. The client availability requirements for the Red Hat OpenShift service availability are 99.99% which requires our production cluster to have a minimum of 6 worker nodes in a multizone cluster across three availability zones (two worker nodes per AZ). This provides for high availability for the application replicas within an availability zone as well as regionally.
 
       **Use Case Sizing Decision:**
 
-- Production Cluster: Twelve 16 vCPU x 64 GB worker nodes (7 worker nodes \* 1.5 = 11 and 12 are required to equally distribute across 3 AZs)
-- Pre-Prod Cluster: Match to Production
-- Non-Production Cluster: Six 16 vCPU x 64 GB worker nodes (5 worker nodes and 6 are required to equally distribute across 3 AZs)
-- *Note: A minimum of 6 worker nodes equally distributed across three availability zones is required to meet the Cloud Service Level Agreement of 99.99% for Tier 3 (High Availability) and for the HomeDIY availability SLA requirement to be met.*
+ - Production Cluster: Twelve 16 vCPU x 64 GB worker nodes (7 worker nodes \* 1.5 = 11 and 12 are required to equally distribute across 3 AZs)
+ - Pre-Prod Cluster: Match to Production
+ - Non-Production Cluster: Six 16 vCPU x 64 GB worker nodes (5 worker nodes and 6 are required to equally distribute across 3 AZs)
+ - *Note: A minimum of 6 worker nodes equally distributed across three availability zones is required to meet the Cloud Service Level Agreement of 99.99% for Tier 3 (High Availability) and for the HomeDIY availability SLA requirement to be met.*
 
 6. **Putting it all together: Final cluster sizing**
 

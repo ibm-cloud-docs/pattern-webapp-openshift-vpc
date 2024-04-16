@@ -11,6 +11,7 @@ keywords:
 
 # Compute design
 {: #compute-design}
+The following section covers the compute design considerations based on the webapplication use case.
 
 ![A screenshot of a computer Description automatically generated](image/4cf5692995f1a7f05097e1fcdf70b851.png)
 

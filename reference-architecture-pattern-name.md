@@ -1,9 +1,9 @@
 ---
 copyright:
 years: 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-16"
 
-subcollection: webapplication-on-openshift-vpc
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 # The release that the reference architecture describes
@@ -18,7 +18,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
-# Reference architecture for Webapp on OpenShift on VPC 
+# Web-application on OpenShift on VPC 
 
 {: #openshift-on-vpc}
 {: toc-content-type="reference-architecture"}
@@ -29,18 +29,17 @@ The IDs, such as {: #title-id} are required for publishing this reference archit
 the toc attributes on the H1, repeating the values from the YAML header.
  -->
 
-After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
+
 
 ## Architecture diagram
 
 {: #architecture-diagram}
 
-*Figure 1. Reference Architecture for cluster design of E-commerce microservices solution*
 
 ![A diagram of a computer network Description automatically
-generated](./image1.png)
+generated](./image/2b4a6209bfdd026fbdbe4b80d5a0613d.jpg)
 
-Figure 1 `<!-- this is the diagram caption -->`
+Figure 1 `<!Reference Architecture for cluster design of E-commerce microservices solution->`
 
 Figure 1 detailed description goes here
 

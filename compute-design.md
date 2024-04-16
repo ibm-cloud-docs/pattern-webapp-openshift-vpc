@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-16"
 
 subcollection: pattern-webapp-openshift-vpc
 

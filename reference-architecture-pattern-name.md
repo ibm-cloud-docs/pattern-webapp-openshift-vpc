@@ -42,20 +42,11 @@ generated](./image/2b4a6209bfdd026fbdbe4b80d5a0613d.jpg)
 Figure 1 `<!Reference Architecture for cluster design of E-commerce microservices solution->`
 
 
-Figure 2 illustrates ....overview text here.
-
-![A diagram of a computer network Description automatically
-generated](./image2.png)
-
-Figure 2
-
-figure 2 detailed diagram description here
-
 ## Design scope
 
 {: #design-scope}
 
-Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), SAP on VPC covers design considerations and architecture decisions for the following aspects and domains:
+Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), RedHat OpenShift on VPC covers design considerations and architecture decisions for the following aspects and domains:
 
 <!-- include all aspectsand domains relavant to the pattern below -->
 
@@ -68,7 +59,11 @@ Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/arc
 
 The Architecture Framework, described in [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
-The Figure 3 shows the domains that are covered in this solution.
+Following the Architecture Framework, the web application on openshift vpc covers design considerations and architecture decisions for the following aspects and domains:
+
+![A screen shot of a computer Description automatically generated](image/3ae57d26830ed794b58c403c5e917bc4.png)
+
+{: caption="Red Hat OpenShift on VPC cluster design scope" caption-side="bottom"}
 
 <!-- use the draw.io framework template to create your heatmap image, located here https://ibm.ent.box.com/file/1389368500379 -->
 
@@ -83,7 +78,7 @@ Figure 3
 
 <!-- insert the requirements table, below is an example -->
 
-The following represents a baseline set of requirements which we believe are applicable to most clients and critical to successful OpenShift deployment.
+The following represents a baseline set of requirements which we believe are applicable to most clients and critical to a successful RedHat OpenShift on VPC deployment.
 | **Aspect**         | **Requirement**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |   |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
 | Compute            | Provide appropriate levels of and memory to match the workloads of the  E-commerce solution as described in the non-functional requirements section.   The solution requires a managed container platform.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |

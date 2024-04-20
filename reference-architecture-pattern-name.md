@@ -1,7 +1,7 @@
 ---
 copyright:
 years: 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-04-20"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -13,7 +13,6 @@ authors:
 ---
 # Web-application on OpenShift on VPC
 
-{: \#openshift-on-vpc} {: toc-content-type="reference-architecture"} {: toc-version="1.0"}
 
 ## Architecture diagram
 

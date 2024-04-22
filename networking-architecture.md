@@ -10,8 +10,10 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Architecture decisions for networking
+{: #networking}
 
-{: #networking-architecture}
+## Network Architecture decision
+{: #ad-network}
 
 The following are networking architecture decisions for the ROKS Networking & Security pattern.
 
@@ -28,3 +30,4 @@ The following are networking architecture decisions for the ROKS Networking & Se
 | Separation of concern traffic management and distribution across microservices | - Fine grained control over traffic distribution and intelligent load balancing for application microservices                         | - Routes in Red Hat OpenShift - Red Hat OpenShift Service Mesh                                                      | Red Hat OpenShift Service Mesh                 | Red hat OpenShift Service Mesh provides advanced traffic management, service mesh features, security and layer 7 load balancing.                                                                                                                                                                           |
 | Segment and control communication between the pods within ROKS cluster         | - Define communication rules between pods for a more secure and controlled environment                                                | - Red Hat OpenShift SDN - Custom CNI                                                                                | Red Hat OpenShift SDN                          | OpenShift Software-Defined Networking (SDN) is the underlying network infrastructure that facilitates the implementation of Network Policies. Network Policies leverage the OpenShift SDN to enforce rules.                                                                                                |
 | Environment isolation                                                          | Isolate production and non-production environments                                                                                    | -Single VPC multi subnets  -Separate VPC                                                                            | Separate VPC for Production and Non Production | Different environments are hosted in different Virtual Private Cloud (VPC). The Production environment deployed separately in a VPC from environments with fine grained Network Access Control Lists (NACLs) .                                                                                             |
+{: caption="Table 1. Architecture decisions for network" caption-side="bottom"}

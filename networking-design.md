@@ -36,7 +36,7 @@ keywords:
 - The non-production environments deployed in a different VPC which can only be accessed by internal audiences like developers, testers, and the operations team.
 - Deploying the environments in different ROKS clusters in different VPCs provides fine-grained segregation between networking, access privilege, and security to each of them.
 
-## Considerations
+## Network Layer Considerations
 {: #network-considerations}
 
 ![A diagram of a computer Description automatically generated](image/55f9ee84834c07de05839fd7fb39d2ce.jpg)
@@ -50,6 +50,7 @@ The network design for the HomeDIY -commerce application follows a layered appro
 5. Data Storage Layer (Private Zone – Secure Workload)
 
 **Public Zone – Internet Facing Workload**
+{: #network-public-zone}
 
 In a cloud deployment architecture, a Public Zone is a network segment placed between an organization's internal and external networks, typically the Internet. Its purpose is to provide additional security by isolating internet-facing services and workloads from the internal network, protecting sensitive data and critical systems from potential security threats originating from the internet.
 
@@ -69,4 +70,6 @@ In the Public Zone, organizations can maintain a balance between providing exter
 
 
 **Private Zone (Secure Workloads)**
+{: #network-private-zone}
+
 In the HomeDIY E-commerce application deployment, business functions, integrations, services, data access, and storage layers are deployed in a private zone, which includes additional security policies and filtered traffic. The ROKS cluster is deployed in a VPC with security policies, and all traffic is routed through a VPC Load Balancer to distribute traffic across multiple availability zones. Microservices are exposed to static web apps or mobile apps using Routes objects in Red Hat OpenShift. Network policies define ingress/egress to and from pods or microservices, and Red Hat OpenShift service mesh adds an additional layer of control in Layer 7. The BFF microservices are enrolled in the Red Hat OpenShift service mesh for flexibility in controlling traffic through a sidecar proxy. Workloads in the ROKS cluster need access to IBM Cloud services, which can be connected via a Virtual Private Endpoint (VPE ) connection.

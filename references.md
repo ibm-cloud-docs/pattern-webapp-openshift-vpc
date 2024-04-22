@@ -47,8 +47,7 @@ keywords:
 **IBM Schematics**
 
 - [https://cloud.ibm.com/docs/schematics?topic=schematics-sc-actions](https://cloud.ibm.com/docs/schematics?topic=schematics-sc-actions)
-- IBM Schematics git repository
-- [https://github.com/Cloud-Schematics/](https://github.com/Cloud-Schematics/)
+- [IBM Schematics git repository](https://github.com/Cloud-Schematics/)
 
 **Networking References:**
 

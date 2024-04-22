@@ -52,29 +52,21 @@ keywords:
 
 **Networking References:**
 
-[Red Hat OpenShift Service Mesh](https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh)
+- [Red Hat OpenShift Service Mesh](https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh)
+- [Calico](https://github.com/projectcalico/calico){: external}.
 
-[Calico](https://github.com/projectcalico/calico){: external}.
-
-***Placement Groups for VPC***
+**Placement Groups for VPC**
 
 - [ALB Multi-Zone Configuration](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about&interface=api#horizontal-scaling)
 - [IBM Cloud SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document)
 
 **Security references :**
 
-[Account types \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-accounts&interface=ui)
-
-[How IBM Cloud IAM works \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-iamoverview)
-
-[Best practices for organizing resources and assigning access \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-account_setup&interface=ui)
-
-[Red Hat Bastion node setup \| IBM Cloud Docs](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
-
-[Encryption overview](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption)
-
-[Setting up worker node disk encryption for VPC clusters \| IBM Cloud Docs](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption-vpc-worker-disks)
-
-[Setting up an image registry \| IBM Cloud Docs](https://cloud.ibm.com/docs/openshift?topic=openshift-registry)
-
-[IBM Clud Container Registry](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started)
+- [Account types \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-accounts&interface=ui)
+- [How IBM Cloud IAM works \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-iamoverview)
+- [Best practices for organizing resources and assigning access \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-account_setup&interface=ui)
+- [Red Hat Bastion node setup \| IBM Cloud Docs](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
+- [Encryption overview](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption)
+- [Setting up worker node disk encryption for VPC clusters \| IBM Cloud Docs](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption-vpc-worker-disks)
+- [Setting up an image registry \| IBM Cloud Docs](https://cloud.ibm.com/docs/openshift?topic=openshift-registry)
+- [IBM Clud Container Registry](https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started)

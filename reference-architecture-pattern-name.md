@@ -17,7 +17,7 @@ authors:
 ## Architecture diagram
 {: #architecture-diagram}
 
-![A diagram of a computer network Description automatically generated](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg)
+![A diagram of a computer network Description automatically generated](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg){: caption="Figure 1. Reference architecture for web application deployment" caption-side="bottom"}
 
 Figure 1 Reference Architecture for cluster design of E-commerce microservices solution
 
@@ -37,9 +37,8 @@ The Architecture Framework, described in [Introduction to the Architecture Frame
 
 Following the Architecture Framework, the web application on openshift vpc covers design considerations and architecture decisions for the following aspects and domains:
 
-![A screen shot of a computer Description automatically generated](image/3ae57d26830ed794b58c403c5e917bc4.png)
+![A screen shot of a computer Description automatically generated](image/3ae57d26830ed794b58c403c5e917bc4.png){: caption="Figure 2. RedHat OpenShift on VPC cluster design scope" caption-side="bottom"}
 
-*Figure 2. Red Hat OpenShift on VPC cluster design scope*
 
 ## Components
 

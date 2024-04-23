@@ -12,7 +12,6 @@ keywords:
 <!-- exapmles of format are below -->
 
 # References
-
 {: #references}
 
 - [IBM Well-Architected Framework Resiliency Pillar](https://www.ibm.com/architectures/well-architected/resiliency)
@@ -44,22 +43,26 @@ keywords:
 - [Disaster Recovery on VPC](https://cloud.ibm.com/docs/ha-infrastructure?topic=ha-infrastructure-ha-dr-backup-restore)
 - [High Availability and Resiliency on IBM Cloud](https://cloud.ibm.com/docs/ha-infrastructure?topic=ha-infrastructure-landing-about-ha-dr-backup)
 
-**IBM Schematics**
+## IBM Schematics
+{: #ibmschematics}
 
 - [https://cloud.ibm.com/docs/schematics?topic=schematics-sc-actions](https://cloud.ibm.com/docs/schematics?topic=schematics-sc-actions)
 - [IBM Schematics git repository](https://github.com/Cloud-Schematics/)
 
-**Networking References:**
+## Networking References
+{: #network-references}
 
 - [Red Hat OpenShift Service Mesh](https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh)
 - [Calico](https://github.com/projectcalico/calico){: external}.
 
-**Placement Groups for VPC**
+## Placement Groups for VPC
+{: #placement-groups-for-vpc}
 
 - [ALB Multi-Zone Configuration](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about&interface=api#horizontal-scaling)
 - [IBM Cloud SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document)
 
-**Security references :**
+## Security references
+{: #security-references}
 
 - [Account types \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-accounts&interface=ui)
 - [How IBM Cloud IAM works \| IBM Cloud Docs](https://cloud.ibm.com/docs/account?topic=account-iamoverview)

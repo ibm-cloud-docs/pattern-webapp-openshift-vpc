@@ -36,3 +36,4 @@ The following are networking architecture decisions for the ROKS Networking & Se
 | {: caption="Table 1. Architecture decisions for network" caption-side="bottom"} |                                                                                                                                       |                                                                                                                     |                                                |                                                                                                                                                                                                                                                                                                            |
 
 {: caption="Table 1. Architecture decisions for network" caption-side="bottom"}
+

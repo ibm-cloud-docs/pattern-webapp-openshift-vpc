@@ -8,6 +8,7 @@ subcollection: pattern-webapp-openshift-vpc
 keywords:
 ---
 # Architecture decisions for security
+{: #security-decisions}
 
 The following are security architecture decisions for the ROKS Networking & Security pattern.
 

@@ -10,7 +10,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Architecture decisions for storage
-
 {: #storage-decisions}
 
 <!-- Below is a placeholder for all compute domain decisions.  Remove the domains that are not in scope.  If there are decisions

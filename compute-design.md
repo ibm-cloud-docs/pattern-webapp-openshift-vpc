@@ -43,9 +43,9 @@ Workload behavior patterns and forecasts can include: seasonal peaks for workloa
 
 Consider Service Level Agreements (SLAs), high availability, resiliency and disaster recovery requirements
 
-**Sizing your Red Hat OpenShift cluster environment**
+<h2>Sizing your Red Hat OpenShift cluster environment </h2>
 
-**Determining the Number of Clusters Required**
+<h3>Determining the Number of Clusters Required </h3>
 
 - The number of ROKS clusters is decided based on the number of environments.
 - For this use case, we have 3 environments. Dev/Test, Pre-Production, and Production. So, the decision is to have 3 ROKS clusters.
@@ -53,7 +53,7 @@ Consider Service Level Agreements (SLAs), high availability, resiliency and disa
   - 1 for Pre-Production Environment.
   - 1 for the Production environment.
 
-**Determine the workload resource requirements for your environments**
+<h3>Determine the workload resource requirements for your environments </h3>
 
 The following general resource consumption guidance for common microservice workloads can also be considered:
 
@@ -66,7 +66,7 @@ Additionally, for stateful applications with shared or persistent storage needs,
 
 The level of availability set up for the cluster impacts coverage under the [IBM Cloud HA service level agreement terms](https://cloud.ibm.com/docs/overview?topic=overview-slas).
 
-**Sizing the HomeDIY Ltd use case Red Hat OpenShift cluster environment**
+<h3>Sizing the HomeDIY Ltd use case Red Hat OpenShift cluster environment </h3>
 
 In sizing the clusters for the HomeDIY use case use the following steps:
 

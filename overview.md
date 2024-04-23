@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-23"
 
 subcollection: pattern-webapp-openshift-vp
 
@@ -10,7 +10,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Overview
-
 {: #overview}
 
 This Red Hat OpenShift on IBM Cloud VPC pattern provides a solution design for microservices based architecture, for an E-commerce environment. This is specifically based on one in use today by HomeDIY Ltd, who are growing their online presence rapidly and have standardised on IBM Cloud for their new modern architecture.

@@ -143,7 +143,7 @@ In sizing the clusters for the HomeDIY use case use the following steps:
 | 2 - Pre-Prod             | Compute Worker Pool |                     | Match to Production          | Match to Production             |
 |                          | Storage Worker Pool |                     | Match to Production          | Match to Production             |
 | 3 - Non-Prod             | Compute Worker Pool | 6                   | 16 vCPU x 64 GB Memory       | Multizone – 2 nodes per AZ     |
-|                          | Storage Worker Pool | 3                   | 4 vCPU x 16 GB Memory        | Multizone – 1 node per AZ      |
+|                          | Storage Worker Pool | 3                   | 4 vCPU x 16 GB Memory        | Multizone – 1 node per AZ      |{: caption="Table 1. Final Cluster Sizing" caption-side="bottom"}
 
 1. Cluster \# 1 (Production):
 

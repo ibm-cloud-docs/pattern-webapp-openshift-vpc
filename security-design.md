@@ -19,7 +19,7 @@ Manage cloud as code is designed to automate everything from application infrast
 Separation of environments follows principle of separation of duties and least privilege:
 
 - Separation of duties - No user should be given enough privileges to misuse the system on their own. No developer access to production.
-  - Least privilege - restrict access privileges of authorized personnel to the minimum necessary to perform their jobs.
+- Least privilege - restrict access privileges of authorized personnel to the minimum necessary to perform their jobs.
 
 separate resource groups to isolate production and non-production environments. Within each resource group a landing zone is created using a VPC.
 

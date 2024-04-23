@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-23"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -12,8 +12,7 @@ keywords:
 # Network design
 {: #network-design}
 
-![A diagram of a computer Description automatically generated](iimage/Merged_Reference_OpenShift-Networking.drawio.svg)
-{: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
+![A diagram of a computer Description automatically generated](image/Merged_Reference_OpenShift-Networking.drawio.svg){: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
 
 
 - HomeDIY Commerce system is a web application accessible from web browsers, mobile applications, and other connected apps via IBM Cloud Internet Services (CIS). It acts as a global load balancer with the CDN (Content Delivery Network), Web Application Firewall (WAF), and Distributed Denial of Service (DDoS) capabilities.

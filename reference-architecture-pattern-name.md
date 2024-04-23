@@ -18,7 +18,7 @@ authors:
 
 {: \#architecture-diagram}
 
-![A diagram of a computer network Description automatically generated](./image/2b4a6209bfdd026fbdbe4b80d5a0613d.jpg)
+![A diagram of a computer network Description automatically generated](./image/Architectureoverview.jpg)
 
 Figure 1 Reference Architecture for cluster design of E-commerce microservices solution
 

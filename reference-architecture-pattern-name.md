@@ -1,6 +1,6 @@
 ---
 copyright:
-years: 2024
+  years: 2024
 lastupdated: "2024-04-20"
 
 subcollection: pattern-webapp-openshift-vpc
@@ -15,16 +15,14 @@ authors:
 
 
 ## Architecture diagram
-
-{: \#architecture-diagram}
+{: #architecture-diagram}
 
 ![A diagram of a computer network Description automatically generated](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg)
 
 Figure 1 Reference Architecture for cluster design of E-commerce microservices solution
 
 ## Design scope
-
-{: \#design-scope}
+{: #design-scope}
 
 Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), RedHat OpenShift on VPC covers design considerations and architecture decisions for the following aspects and domains:
 

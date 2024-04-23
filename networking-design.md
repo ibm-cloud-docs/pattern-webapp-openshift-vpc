@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-23"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -39,7 +39,8 @@ keywords:
 ## Network Considerations
 {: #network-considerations}
 
-![A diagram of a computer Description automatically generated](image/Merged_Reference_OpenShift-NetworkingLayers.drawio.svg){: caption="Figure 2. Layers of a web application deployment in cloud" caption-side="bottom"}
+![A diagram of a computer Description automatically generated](image/Merged_Reference_OpenShift-NetworkingLayers.drawio.svg)
+{: caption="Figure 2. Layers of a web application deployment in cloud" caption-side="bottom"}
 
 The network design for the HomeDIY -commerce application follows a layered approachsegregation of responsibility. These layers help in identifying which workloads need to be public-facing and which need to be considered as secure and deployed in a private zone.
 

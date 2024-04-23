@@ -25,7 +25,7 @@ The following section covers the compute design considerations based on the weba
 7. By default, the cluster is provisioned with a VPC security group and a cluster-level security group.
 8. The OpenShift platform is integrated with IBM Cloud Services to provide centralized cluster observability services.
 
-**Capacity planning for your Red Hat OpenShift cluster**
+<h2>Capacity planning for your Red Hat OpenShift cluster </h2>
 
 It is important to plan for the expected capacity of the Red Hat OpenShift deployment to ensure proper infrastructure sizing and resource availability.
 

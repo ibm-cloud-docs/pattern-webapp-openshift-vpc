@@ -14,7 +14,7 @@ keywords:
 
 The following section covers the compute design considerations based on the webapplication use case.
 
-![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg)
+![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Figure 1. Compute design for web application deployment" caption-side="bottom"}
 
 1. A VPC Landing Zone is deployed which provides the ability to automate the install of an OpenShift cluster into a multizone region.
 2. Three separate clusters are created for the production, pre-production and dev/test environments (diagram shows production cluster only).

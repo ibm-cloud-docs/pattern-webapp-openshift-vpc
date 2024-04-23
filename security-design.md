@@ -13,7 +13,7 @@ keywords:
 
 {: #security-design}
 
-![A screenshot of a computer Description automatically generated](image/6ebac3a924e72be2aece22b10edc8763.png)
+![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-security.drawio.svg)
 
 Manage cloud as code is designed to automate everything from application infrastructure to account creation and compliance monitoring.
 

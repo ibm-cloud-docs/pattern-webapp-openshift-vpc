@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-23"
 
 subcollection: 
 
@@ -60,7 +60,7 @@ For more information on IBM Cloud databases, see the following [documentation](h
 
 For more information, see the following [Portworx documentation](https://cloud.ibm.com/docs/openshift?topic=openshift-storage_portworx_about).
 
-![A diagram of a workflow Description automatically generated](image/22bb420d0ef552ca87fc84df1e5ebe6a.png)
+![A diagram of a workflow Description automatically generated](image/Merged_Reference_OpenShift-storage.drawio.svg)
 
 **Portworx provisioned in a multizone cluster**
 

@@ -12,7 +12,8 @@ keywords:
 # Network design
 {: #network-design}
 
-![A diagram of a computer Description automatically generated](image/2b4a6209bfdd026fbdbe4b80d5a0613d.jpg){: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
+![A diagram of a computer Description automatically generated](iimage/Merged_Reference_OpenShift-Networking.drawio.svg)
+{: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
 
 
 - HomeDIY Commerce system is a web application accessible from web browsers, mobile applications, and other connected apps via IBM Cloud Internet Services (CIS). It acts as a global load balancer with the CDN (Content Delivery Network), Web Application Firewall (WAF), and Distributed Denial of Service (DDoS) capabilities.
@@ -39,7 +40,8 @@ keywords:
 ## Network Considerations
 {: #network-considerations}
 
-![A diagram of a computer Description automatically generated](image/55f9ee84834c07de05839fd7fb39d2ce.jpg){: caption="Figure 2. Layers of a web application deployment in cloud" caption-side="bottom"}
+![A diagram of a computer Description automatically generated](image/Merged_Reference_OpenShift-NetworkingLayers.drawio.svg)
+{: caption="Figure 2. Layers of a web application deployment in cloud" caption-side="bottom"}
 
 The network design for the HomeDIY -commerce application follows a layered approachsegregation of responsibility. These layers help in identifying which workloads need to be public-facing and which need to be considered as secure and deployed in a private zone.
 

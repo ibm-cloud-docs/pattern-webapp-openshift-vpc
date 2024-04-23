@@ -18,7 +18,7 @@ authors:
 
 {: \#architecture-diagram}
 
-![A diagram of a computer network Description automatically generated](./image/Architectureoverview.jpg)
+![A diagram of a computer network Description automatically generated](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg)
 
 Figure 1 Reference Architecture for cluster design of E-commerce microservices solution
 

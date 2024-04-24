@@ -9,7 +9,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Resiliency design
-
 {: #resiliency-design}
 
 Please see the VPC resiliency architecture pattern \<here\>

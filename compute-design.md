@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-04-23"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -14,7 +14,7 @@ keywords:
 
 The following section covers the compute design considerations based on the webapplication use case.
 
-![A screenshot of a computer Description automatically generated](image/4cf5692995f1a7f05097e1fcdf70b851.png)
+![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Figure 1. Compute design for web application deployment" caption-side="bottom"}
 
 1. A VPC Landing Zone is deployed which provides the ability to automate the install of an OpenShift cluster into a multizone region.
 2. Three separate clusters are created for the production, pre-production and dev/test environments (diagram shows production cluster only).
@@ -25,7 +25,7 @@ The following section covers the compute design considerations based on the weba
 7. By default, the cluster is provisioned with a VPC security group and a cluster-level security group.
 8. The OpenShift platform is integrated with IBM Cloud Services to provide centralized cluster observability services.
 
-**Capacity planning for your Red Hat OpenShift cluster**
+<h2>Capacity planning for your Red Hat OpenShift cluster </h2>
 
 It is important to plan for the expected capacity of the Red Hat OpenShift deployment to ensure proper infrastructure sizing and resource availability.
 
@@ -43,9 +43,9 @@ Workload behavior patterns and forecasts can include: seasonal peaks for workloa
 
 Consider Service Level Agreements (SLAs), high availability, resiliency and disaster recovery requirements
 
-**Sizing your Red Hat OpenShift cluster environment**
+<h2>Sizing your Red Hat OpenShift cluster environment </h2>
 
-**Determining the Number of Clusters Required**
+<h3>Determining the Number of Clusters Required </h3>
 
 - The number of ROKS clusters is decided based on the number of environments.
 - For this use case, we have 3 environments. Dev/Test, Pre-Production, and Production. So, the decision is to have 3 ROKS clusters.
@@ -53,7 +53,7 @@ Consider Service Level Agreements (SLAs), high availability, resiliency and disa
   - 1 for Pre-Production Environment.
   - 1 for the Production environment.
 
-**Determine the workload resource requirements for your environments**
+<h3>Determine the workload resource requirements for your environments </h3>
 
 The following general resource consumption guidance for common microservice workloads can also be considered:
 
@@ -66,7 +66,7 @@ Additionally, for stateful applications with shared or persistent storage needs,
 
 The level of availability set up for the cluster impacts coverage under the [IBM Cloud HA service level agreement terms](https://cloud.ibm.com/docs/overview?topic=overview-slas).
 
-**Sizing the HomeDIY Ltd use case Red Hat OpenShift cluster environment**
+<h3>Sizing the HomeDIY Ltd use case Red Hat OpenShift cluster environment </h3>
 
 In sizing the clusters for the HomeDIY use case use the following steps:
 
@@ -143,7 +143,7 @@ In sizing the clusters for the HomeDIY use case use the following steps:
 | 2 - Pre-Prod             | Compute Worker Pool |                     | Match to Production          | Match to Production             |
 |                          | Storage Worker Pool |                     | Match to Production          | Match to Production             |
 | 3 - Non-Prod             | Compute Worker Pool | 6                   | 16 vCPU x 64 GB Memory       | Multizone – 2 nodes per AZ     |
-|                          | Storage Worker Pool | 3                   | 4 vCPU x 16 GB Memory        | Multizone – 1 node per AZ      |
+|                          | Storage Worker Pool | 3                   | 4 vCPU x 16 GB Memory        | Multizone – 1 node per AZ      |{: caption="Table 1. Final Cluster Sizing" caption-side="bottom"}
 
 1. Cluster \# 1 (Production):
 

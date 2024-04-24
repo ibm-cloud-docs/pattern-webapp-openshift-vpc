@@ -37,7 +37,7 @@ The Architecture Framework, described in [Introduction to the Architecture Frame
 
 Following the Architecture Framework, the web application on openshift vpc covers design considerations and architecture decisions for the following aspects and domains:
 
-![A screen shot of a computer Description automatically generated](image/3ae57d26830ed794b58c403c5e917bc4.png){: caption="Figure 2. RedHat OpenShift on VPC cluster design scope" caption-side="bottom"}
+![A screen shot of a computer Description automatically generated](image/image/heat-map-template.svg){: caption="Figure 2. RedHat OpenShift on VPC cluster design scope" caption-side="bottom"}
 
 
 ## Components

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-29"
 
 subcollection: pattern-webapp-openshift-vpc
 keywords:
@@ -21,12 +21,12 @@ Users are less likely to experience downtime when apps are distributed across mu
 ### Single zone cluster
 {: #single-zone-cluster}
 
-A single control plane running in only one availability zone. To improve application availability and to allow failover in the event that one worker node is not available in the cluster, add additional worker nodes to the single zone cluster. The workload becomes unavailable in the event of a zonal outage. Single zone clusters are suitable for only transient or non-critical workloads.
+A single control plane running in only one availability zone. To improve application availability and to allow failover if one worker node is not available in the cluster, add additional worker nodes to the single zone cluster. The workload becomes unavailable if there's a zonal outage. Single zone clusters are suitable for only transient or noncritical workloads.
 
 ### Multizone cluster
 {: #multi-zone-cluster}
 
-Create a multizone cluster to distribute workloads across multiple worker nodes and zones, and protect against zone failures with hosts, networks, or apps. If resources in one zone go down, the cluster workloads continue to run in the other zones. Multizone clusters provide high availability and the following additional benefits:
+Create a multizone cluster to distribute workloads across multiple worker nodes and zones, and protect against zone failures with hosts, networks, or apps. If resources in one zone go down, the cluster workloads continue to run in the other zones. Multizone clusters provide high availability and the following more benefits:
 
 - Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
 - Guard against zone failure by spreading nodes evenly across the selected multizones and by using anti-affinity pod deployments for applications.
@@ -36,7 +36,8 @@ Create a multizone cluster to distribute workloads across multiple worker nodes 
 ## Cross regional active to active cluster deployment
 {: deployment-cross-regional}
 
-For solutions requiring high availability and capacity management, two active clusters can be deployed with the workload distributed using a global load balancer. In the event of a cluster failure in one region, the second cluster can be scaled to manage the full workload. For the e-commerce use case it was decided multiregion deployment was not required with the additional costs factored into the decision.
+For solutions that require high availability and capacity management, two active clusters can be deployed with the workload distributed by using a global load balancer. 
+if there's a cluster failure in one region, the second cluster can be scaled to manage the full workload. For the e-commerce use case, it was decided that multiregion deployment was not required with the additional costs factored into the decision.
 
 ## Service Level Agreements
 {: #sla}

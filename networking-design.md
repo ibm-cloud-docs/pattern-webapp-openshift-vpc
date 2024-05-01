@@ -18,10 +18,10 @@ keywords:
 - HomeDIY commerce system is a web application accessible from web browsers, mobile applications, and other connected apps through IBM Cloud Internet Services (CIS). It acts as a global load balancer with the Content Delivery Network (CDN), Web Application Firewall (WAF), and Distributed Denial of Service (DDoS) capabilities.
 - Only HTTPS traffic, Port 443, is allowed through CIS.
 - The operations and system admin team that manages this system accesses various environments through a secure Virtual Private Network (VPN) connection that allows SSH-only connection through Port 22.
-- For a website request (1), the CIS forwards to the ICOS where the static website is hosted.
+- For a website request (1), the CIS forwards to the IBM Cloud Object Storage where the static website is hosted.
 - For an API request, the CIS forwards to a load balancer
 - For a website request, the static web application hosted in IBM Cloud Object Storage propagated in Point of Presence (POP) locations gets served through Content Delivery Network (CDN).
-- Ideally, the static web application in ICOS is hosted in a public internet-facing network segment as these are the only internet-facing workloads.
+- Ideally, the static web application in IBM Cloud Object Storage is hosted in a public internet-facing network segment as these are the only internet-facing workloads.
 - The API request, from static websites and mobile apps(2), reaches the Back End For Frontend (BFF) microservices hosted in Red Hat OpenShift on IBM Cloud Red Hat Openshift cluster deployed in a Virtual Private Cloud (VPC).
 - A network load balancer (3) distributes the traffic across the Red Hat Openshift worker nodes spread across the multiple availability zones.
 - As per the routes (4) in the Red Hat Openshift cluster, the traffic is then forwarded to the appropriate Kubernetes service which caters to the business logic in a Kubernetes pod as a microservice.
@@ -54,11 +54,11 @@ The network design for the HomeDIY -commerce application follows a layered appro
 
 In a cloud deployment architecture, a Public Zone is a network segment placed between an organization's internal and external networks, typically the Internet. Its purpose is to provide additional security by isolating internet-facing services and workloads from the internal network, protecting sensitive data and critical systems from potential security threats originating from the internet.
 
-- The HomeDIY -commerce application's internet-facing static content (Presentation Layer) is deployed in IBM Cloud Object Storage (ICOS).
+- The HomeDIY -commerce application's internet-facing static content (Presentation Layer) is deployed in IBM Cloud Object Storage.
 
-- Static contents like HTML, JavaScript, and Images/Videos are served from ICOS to internet users.
+- Static contents like HTML, JavaScript, and Images/Videos are served from IBM Cloud Object Storage to internet users.
 
-- All requests reaching ICOS are via Cloud Internet Services (CIS), which acts as a public/global load balancer with DDoS protection.
+- All requests reaching IBM Cloud Object Storage are via Cloud Internet Services (CIS), which acts as a public/global load balancer with DDoS protection.
 
 - CIS has multiple Point of Presence (PoP) locations for Content Delivery Network (CDN) capability, improving user experience and application performance.
 

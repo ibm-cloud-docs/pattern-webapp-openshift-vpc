@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-01"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -12,7 +12,9 @@ keywords:
 # Network design
 {: #network-design}
 
-![A diagram of a computer description automatically generated](image/Merged_Reference_OpenShift-Networking.drawio.svg){: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
+The following section provides a detailed view of Red Hat OpenShift networking design, for deploying a containerised web application in IBM Cloud.
+
+![Red Hat OpenShift Networking design](image/Merged_Reference_OpenShift-Networking.drawio.svg){: caption="Figure 1. Network design for web application deployment" caption-side="bottom"}
 
 
 - HomeDIY commerce system is a web application accessible from web browsers, mobile applications, and other connected apps through IBM Cloud Internet Services (CIS). It acts as a global load balancer with the Content Delivery Network (CDN), Web Application Firewall (WAF), and Distributed Denial of Service (DDoS) capabilities.

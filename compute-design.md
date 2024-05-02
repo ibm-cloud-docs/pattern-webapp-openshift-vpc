@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-02"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -14,7 +14,7 @@ keywords:
 
 The following are the compute design considerations based on the Red Hat OpenShift on {{site.data.keyword.vpc_full}} pattern.
 
-![A screenshot of a computer description automatically generated](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Figure 1. Compute design for web application deployment" caption-side="bottom"}
+![Compute design for web application deployment](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Figure 1. Compute design for web application deployment" caption-side="bottom"}
 
 1. A VPC Landing Zone is deployed which provides the ability to automate the installation of an Red Hat OpenShift cluster into a multizone region.
 2. Three separate clusters are created for the production, pre-production, and dev and test environments. The diagram depicts only the production cluster.

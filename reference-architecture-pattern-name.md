@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-02"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -13,11 +13,14 @@ authors:
 ---
 # Web-application on Red Hat OpenShift on VPC
 {: #Web-application-on-OpenShift-on-VPC}
+This is a baseline solution pattern containing the design and architecture decisions for a web application deployment on RedHat OpenShift on IBM Cloud to meet common requirements. Actual client solutions depend on the specific requirements that are set by the client.
+
+
 
 ## Architecture diagram
 {: #architecture-diagram}
 
-![A diagram of a computer network Description automatically generated](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg){: caption="Figure 1. Reference architecture for web application deployment" caption-side="bottom"}
+![Reference Architecture for web application deployment](./image/Merged_Reference_OpenShift-MZR-Private-VPN-1.drawio.svg){: caption="Figure 1. Reference architecture for web application deployment" caption-side="bottom"}
 
 ## Design scope
 {: #design-scope}

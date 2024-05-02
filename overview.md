@@ -68,9 +68,9 @@ This pattern provides guidance on the following topics:
 
 The Red Hat OpenShift on IBM Cloud VPC pattern is intended to:
 
-- Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the [IBM Architecture Framework](https://cloud.ibm.com/docs/architecture-framework).
+- Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the [IBM Architecture Design Framework](https://cloud.ibm.com/docs/architecture-framework).
 - Provide a prescriptive, end-to-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection to meet enterprise requirements.
 - Ensure that requirements can be met from a performance, security and compliance, availability, and observability perspective.
 
 
-The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework).
+The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Introduction to the Architecture Design Framework](/docs/architecture-framework).

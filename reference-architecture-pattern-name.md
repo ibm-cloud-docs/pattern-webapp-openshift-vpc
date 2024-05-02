@@ -25,7 +25,7 @@ This is a baseline solution pattern containing the design and architecture decis
 ## Design scope
 {: #design-scope}
 
-Following the [Architecture Framework](/docs/architecture-framework?topic=architecture-framework-taxonomy), Red Hat OpenShift on VPC covers design considerations and architecture decisions for the following aspects and domains:
+Following the [Architecture Design Framework](/docs/architecture-framework?topic=architecture-framework-taxonomy), Red Hat OpenShift on VPC covers design considerations and architecture decisions for the following aspects and domains:
 
 - Compute: Bare Metal and Virtual infrastructure
 - Storage: Primary, Backup, Archive, and Migration
@@ -34,9 +34,9 @@ Following the [Architecture Framework](/docs/architecture-framework?topic=archit
 - Resiliency: Backup and Restore, Disaster Recovery, High Availability
 - Service Management: Monitoring, Logging, Alerting, Management/Orchestration
 
-The Architecture Framework, described in [Introduction to the Architecture Framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure that you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The Architecture Design Framework, described in [Introduction to the Architecture Design Framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure that you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
-Following the Architecture Framework, the web application on Red Hat OpenShift VPC covers design considerations and architecture decisions for the following aspects and domains:
+Following the Architecture Design Framework, the web application on Red Hat OpenShift VPC covers design considerations and architecture decisions for the following aspects and domains:
 
 ![A screen shot of a computer Description automatically generated](image/heat-map-template.svg){: caption="Figure 2. RedHat OpenShift on VPC cluster design scope" caption-side="bottom"}
 

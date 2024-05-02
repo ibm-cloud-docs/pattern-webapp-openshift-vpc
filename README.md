@@ -1,2 +1,4 @@
-# pattern-webapp-openshift-vpc
-Documentation repository for pattern-webapp-openshift-vpc
+# pattern templates
+Accelerator patterns template files
+This is a ROKS and OpenShift MZR pattern.
+

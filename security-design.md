@@ -21,7 +21,7 @@ Separation of environments follows principle of separation of duties and least p
 - Separation of duties - No user should be given enough privileges to misuse the system on their own. No developer access to production.
 - Least privilege - restrict access privileges of authorized personnel to the minimum necessary to perform their jobs.
 
-separate resource groups to isolate production and non-production environments. Within each resource group a landing zone is created using a VPC.
+Separate resource groups to isolate production and non-production environments. Within each resource group a landing zone is created using a VPC.
 
 The Production VPC is privatenot connected to the internet with administrative and operator access through a Bastion host.
 

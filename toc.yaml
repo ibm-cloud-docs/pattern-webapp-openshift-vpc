@@ -14,18 +14,15 @@ toc:
     path: pattern-webapp-openshift-vpc
     description: Web application on Openshift VPC single region multizone deployment following well architected framework conver cluster storage, network and security design and best practices.
     label: Deploying web application on Openshift in a MZR on IBM Cloud
-
   entries:
   - navgroup:
       id: overview
       topics:
       - overview.md
-
   - navgroup:
       id: architecture
       topics:
       - reference-architecture-pattern-name.md
-
   - navgroup:
       id: plan
       topics:
@@ -61,18 +58,15 @@ toc:
           - topic: service-management-architecture.md
             navtitle: Service management
           - other-architecture.md
-
   - navgroup:
       id: deploy
       topics:
       - topic-7.md
       - topic-8.md
-
   - navgroup:
       id: reference
       topics:
       - references.md
-
   - navgroup:
       id: help
       topics:

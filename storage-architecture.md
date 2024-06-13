@@ -12,8 +12,7 @@ keywords:
 # Architecture decisions for storage
 {: #storage-decisions}
 
-<!-- Below is a placeholder for all compute domain decisions.  Remove the domains that are not in scope.  If there are decisions
-that need to be added (e.g. platform dependent) add additional rows-->
+
 
 Data storage for this application focuses on multizone region high availability and disaster recovery. The following are storage architecture decisions for the Red Hat OpenShift on VPC storage pattern:
 

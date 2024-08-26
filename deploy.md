@@ -3,7 +3,7 @@ copyright:
   years: 2024
 lastupdated: "2024-08-22"
 
-subcollection: pattern-openshift-vpc-mz-resiliency
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 ---

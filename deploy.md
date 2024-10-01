@@ -10,7 +10,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Deploying a Red Hat OpenShift VPC multizone architecture
-{: #roks-vpc--mz-da}
+{: #roks-vpc-mz-da}
 
 This guide outlines deploying a single region Red Hat OpenShift architecture in a multizone resilient configuration, specifically in three availability zones. The deployment is based on an existing deployable architecture template, as well as a series of customizations to tailor the setup to the specific requirements for your environment.
 
@@ -31,7 +31,7 @@ You need the following items to deploy and configure this reference architecture
 {: #provision-roks-vpc-mz}
 
 1. Select the [VPC multi-zone region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region&interface=cli) that you want to provision in.
-2. Provision the [Red Hat Openshift VPC Multizone Deployable architecture](https://cloud.ibm.com/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra){: external} 
+2. Provision the [Red Hat Openshift VPC Multizone Deployable architecture](https://cloud.ibm.com/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra){: external}
 3. Add required and optional parameters
 4. Provision a VSI within a subnet on the Red Hat Openshift landing zone using the the [VSI extension Deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra)
 5. Add required and optional parameters and deploy.
@@ -52,16 +52,19 @@ For access to Openshift UI provision a [VPN](https://cloud.ibm.com/docs/vpc?topi
 
 ## Post install options
 {: #provision-vsi-bastion-host-software}
+
 To install and configure the bastion host software on a virtual server instance follow the [Bastion software install guide](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server)
 
-
+### Provision Portworx
 {: #provision-portworx-software-defined-storage}
 
 1. Follow the [Portworx prerequisites](https://docs.portworx.com/portworx-enterprise/platform/kubernetes/ibm-iks/before-you-begin)
 2. Follow the [Portworx deployment guide](/docs/openshift?topic=openshift-storage_portworx_deploy)
-   
+
+### Provision Privileged Access Gateway
 {: #provision-a-privileged-access-gateway}
-This is an alternative approach to configuring a bastion host on a VSI. Follow the [Priviliged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi)
+
+This is an alternative approach to configuring a bastion host on a VSI. Follow the [Privileged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi)
 
 ## Additional services
 {: #additonal-roks-vpx-mz-services}

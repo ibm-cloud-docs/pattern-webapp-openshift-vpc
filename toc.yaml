@@ -41,7 +41,6 @@ toc:
             navtitle: Resiliency
           - topic: service-management-design.md
             navtitle: Service management
-          - other-design.md
       - topicgroup:
           label: Architecture decisions
           topics:
@@ -57,7 +56,6 @@ toc:
             navtitle: Resiliency
           - topic: service-management-architecture.md
             navtitle: Service management
-          - other-architecture.md
   - navgroup:
       id: deploy
       topics:

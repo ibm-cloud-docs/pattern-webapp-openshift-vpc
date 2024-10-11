@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-11"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -12,7 +12,7 @@ keywords:
 # Deploying a Red Hat OpenShift VPC multizone architecture
 {: #roks-vpc-mz-da}
 
-This guide outlines deploying a single region Red Hat OpenShift architecture in a multizone resilient configuration, specifically in three availability zones. The deployment is based on an existing deployable architecture template, as well as a series of customizations to tailor the setup to the specific requirements for your environment.
+The following deployment guide outlines deploying a single region Red Hat OpenShift architecture in a multizone resilient configuration, specifically in three availability zones. The deployment is based on an existing deployable architecture template, as well as a series of customizations to tailor the setup to the specific requirements for your environment.
 
 This is designed for customers who need a scalable, multizone Kubernetes infrastructure with the flexibility of customizations after the initial deployment of the base deployable architecture. It allows for adapting various components, such as networking and security, to better suit individual business needs after the foundational architecture has been established.
 
@@ -31,40 +31,41 @@ You need the following items to deploy and configure this reference architecture
 {: #provision-roks-vpc-mz}
 
 1. Select the [VPC multi-zone region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region&interface=cli) that you want to provision in.
-2. Provision the [Red Hat Openshift VPC Multizone Deployable architecture](https://cloud.ibm.com/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra){: external}
-3. Add required and optional parameters
-4. Provision a VSI within a subnet on the Red Hat Openshift landing zone using the the [VSI extension Deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra)
-5. Add required and optional parameters and deploy.
+1. Provision the [Red Hat OpenShift VPC Multizone Deployable architecture](https://cloud.ibm.com/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra){: external}
+1. Add required and optional parameters
+1. Provision a VSI within a subnet on the Red Hat OpenShift landing zone by using the [VSI extension Deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra)
+1. Add required and optional parameters and deploy.
 
-For the Openshift deployable architecture the following parameters need to be set:
+For the Red Hat OpenShift deployable architecture the following parameters must be set:
 
-* Required tab: `api_key` (can be connected to Secrets Manager instance to input)
+* Required tab: `api_key`. This can be connected to a Secrets Manager instance to input.
 * Required tab: `region` and `prefix`
-* Optional tab: `vpcs` (set to just workload)
+* Optional tab: `vpcs` that is set to workload.
 
-For the VSI Extension deployable architecture the following parameters need to be set:
+For the VSI extension deployable architecture the following parameters must be set:
 
-* Required tab: `ssh_public_key`, `region`, `boot_volume_encryption_key`(use crn from kms instance in ROKS DA), `vpc_id`(from ROKS DA)
-* Optional tab: `subnet_names`(to avoid 1 vsi every subnet specify the names of a subnet across the three zones ie; vsi-zone-1, vsi-zone-2, vsi-zone-3)
+* Required tab: `ssh_public_key`, `region`, `boot_volume_encryption_key`. Use the CRN from kms instance in the Red Hat OpenShift deployable architecture and `vpc_id` from the Red Hat OpenShift deployable architecture.
+* Optional tab: `subnet_names`. Use this to avoid 1 VSI every subnet specify the names of a subnet across the three zones, for example, vsi-zone-1, vsi-zone-2, vsi-zone-3. 
 
-For access to Openshift UI provision a [VPN](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-create-server&interface=ui)
+For access to the Red Hat OpenShift UI, create a [VPN](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-create-server&interface=ui).
+{: note}
 
 
-## Post install options
+## Post installation options
 {: #provision-vsi-bastion-host-software}
 
-To install and configure the bastion host software on a virtual server instance follow the [Bastion software install guide](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server)
+To install and configure the bastion host software on a virtual server instance, complete the steps outlined in the [Bastion software installation guide](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 
 ### Provision Portworx
 {: #provision-portworx-software-defined-storage}
 
-1. Follow the [Portworx prerequisites](https://docs.portworx.com/portworx-enterprise/platform/kubernetes/ibm-iks/before-you-begin)
-2. Follow the [Portworx deployment guide](/docs/openshift?topic=openshift-storage_portworx_deploy)
+1. Complete the [Portworx prerequisites](https://docs.portworx.com/portworx-enterprise/platform/kubernetes/ibm-iks/before-you-begin).
+1. Follow and complete the steps that are outlined in the [Portworx deployment guide](/docs/openshift?topic=openshift-storage_portworx_deploy).
 
 ### Provision Privileged Access Gateway
 {: #provision-a-privileged-access-gateway}
 
-This is an alternative approach to configuring a bastion host on a VSI. Follow the [Privileged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi)
+Provisioning Privileged Access Gateway is an alternative approach to configuring a bastion host on a VSI. For more information, see the [Privileged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi).
 
 ## Additional services
 {: #additonal-roks-vpx-mz-services}

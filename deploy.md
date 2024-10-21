@@ -45,7 +45,7 @@ For the Red Hat OpenShift deployable architecture the following parameters must 
 For the VSI extension deployable architecture the following parameters must be set:
 
 * Required tab: `ssh_public_key`, `region`, `boot_volume_encryption_key`. Use the CRN from kms instance in the Red Hat OpenShift deployable architecture and `vpc_id` from the Red Hat OpenShift deployable architecture.
-* Optional tab: `subnet_names`. Use this to avoid 1 VSI every subnet specify the names of a subnet across the three zones, for example, vsi-zone-1, vsi-zone-2, vsi-zone-3. 
+* Optional tab: `subnet_names`. Use this to install a single bastion host on 1 virtual server instance which covers all subnets, specify the names of a subnet across the three zones, for example, vsi-zone-1, vsi-zone-2, vsi-zone-3. 
 
 For access to the Red Hat OpenShift UI, create a [VPN](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-create-server&interface=ui).
 {: note}

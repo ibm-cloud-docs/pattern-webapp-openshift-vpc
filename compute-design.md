@@ -14,7 +14,7 @@ keywords:
 
 The following are the compute design considerations based on the Red Hat OpenShift on {{site.data.keyword.vpc_full}} pattern.
 
-![Compute design for web application deployment](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Figure 1. Compute design for web application deployment" caption-side="bottom"}
+![Compute design for web application deployment](image/Merged_Reference_OpenShift-ComputeDesign.drawio.svg){: caption="Compute design for web application deployment" caption-side="bottom"}
 
 1. A VPC Landing Zone is deployed which provides the ability to automate the installation of an Red Hat OpenShift cluster into a multizone region.
 2. Three separate clusters are created for the production, pre-production, and dev and test environments. The diagram depicts only the production cluster.
@@ -139,7 +139,7 @@ A minimum of 6 worker nodes that are equally distributed across three availabili
 |                          | Storage worker pool |                     | Match to Production          | A match to production             |
 | 3: Nonproduction             | Compute worker pool | 6                   | 16 vCPU x 64 GB Memory       | Multizone: 2 nodes per AZ     |
 |                          | Storage worker pool | 3                   | 4 vCPU x 16 GB Memory        | Multizone: 1 node per AZ      |
-{: caption="Table 1. Final cluster sizing" caption-side="bottom"}
+{: caption="Final cluster sizing" caption-side="bottom"}
 
 1. Cluster 1: Production
       - Separate worker pools for e-commerce application workload and the software-defined storage layer

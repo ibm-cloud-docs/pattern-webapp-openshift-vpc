@@ -12,7 +12,7 @@ keywords:
 # Security design
 {: #security-design}
 
-![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-security.drawio.svg){: caption="Figure 1. Security design for web application deployment" caption-side="bottom"}
+![A screenshot of a computer Description automatically generated](image/Merged_Reference_OpenShift-security.drawio.svg){: caption="Security design for web application deployment" caption-side="bottom"}
 
 Manage cloud as code is designed to automate everything from application infrastructure to account creation and compliance monitoring.
 

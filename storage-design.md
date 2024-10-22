@@ -59,7 +59,7 @@ Portworx is a software-defined storage (SDS) solution that transforms commodity 
 
 For more information, see [About Portworx](/docs/openshift?topic=openshift-storage_portworx_about){: external}.
 
-![A diagram of a workflow Description automatically generated](image/Merged_Reference_OpenShift-storage.drawio.svg){: caption="Figure 1. Storage design for web application deployment" caption-side="bottom"}
+![A diagram of a workflow Description automatically generated](image/Merged_Reference_OpenShift-storage.drawio.svg){: caption="Storage design for web application deployment" caption-side="bottom"}
 
 Review the following use cases for provisioning Portworx in a multizone cluster:
 

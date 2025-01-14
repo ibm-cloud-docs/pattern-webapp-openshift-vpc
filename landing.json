@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "title": "Deploying web application on Red Hat OpenShift kubernetes service in IBM Cloud",
     "introduction": "The Red Hat OpenShift on IBM Cloud VPC pattern provides a solution design for microservice based architecture to deploy an e-commerce web application.",
     "section_topics": {
@@ -43,8 +43,8 @@
       {
         "title": "Deploying a Red Hat OpenShift VPC multizone architecture",
         "href": "/docs/pattern-webapp-openshift-vpc?topic=pattern-webapp-openshift-vpc-roks-vpc-mz-da",
-        "deployable": true
+        "deployable": false
       }
     ]
-  }
+}
   

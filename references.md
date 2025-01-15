@@ -17,6 +17,7 @@ keywords:
 - [Application Monitoring](/docs/monitoring?topic=monitoring-getting-started)
 - [Understanding Disaster Recovery](/docs/overview?topic=overview-understanding-dr)
 - [Designing an architecture for your application resiliency objectives](https://www.ibm.com/architectures/well-architected/resiliency){: external}.
+- [Sizing your Red Hat OpenShift on IBM Cloud Cluster environment](/docs/openshift?topic=openshift-strategy)
 - [Disaster Recovery on VPC](/docs/ha-infrastructure?topic=ha-infrastructure-ha-dr-backup-restore)
 - [Resiliency on IBM Cloud](/docs/resiliency?topic=resiliency-resiliency-overview)
 - [High Availability on IBM Cloud](/docs/resiliency?topic=resiliency-understanding-ha)

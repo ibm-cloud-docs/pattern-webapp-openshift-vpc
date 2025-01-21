@@ -12,13 +12,13 @@ keywords:
 
 {: #management-monitoring}
 
-The recommended approach for multi-cluster management and monitoring is to use IBM Cloud tools that include IBM Log Analysis and IBM Cloud Monitoring. This approach enables application cluster metrics log aggregation and central management within IBM Cloud.
+The recommended approach for multi-cluster management and monitoring is to use IBM Cloud tools that include IBM Cloud Log and IBM Cloud Monitoring. This approach enables application cluster metrics log aggregation and central management within IBM Cloud.
 
-## IBM Log Analysis
+## IBM Cloud Log
 
 {: #log-analysis}
 
-You can use IBM Log Analysis to add log management capabilities to Red Hat OpenShift VPC clusters and provide for the following:
+You can use IBM Cloud Log to add log management capabilities to Red Hat OpenShift VPC clusters and provide for the following:
 
 - Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.
 - Quick integration with the cluster via a script.

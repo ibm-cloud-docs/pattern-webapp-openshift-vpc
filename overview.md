@@ -3,7 +3,7 @@ copyright:
   years: 2024
 lastupdated: "2024-05-07"
 
-subcollection: pattern-webapp-openshift-vp
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 ---

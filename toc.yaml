@@ -1,13 +1,7 @@
-#  Name your file `toc.yaml`
-#  Make sure you include all nav file coding requirements
-#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
----
 toc:
   properties:
     subcollection: pattern-webapp-openshift-vpc
-    # industry: industry-value
     use-case: Public cloud
-    # compliance: compliance-value
     audience: solution
     content-type: deployment
     href: /docs/pattern-webapp-openshift-vpc

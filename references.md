@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-10-20"
 
 subcollection: web-application-on-openshift-vpc
 
@@ -24,7 +24,7 @@ keywords:
 - [Backup for VPC](/docs/vpc?topic=vpc-backup-service-about)
 - [Incident Management](https://www.ibm.com/cloud/architecture/architectures/incidentManagementDomain/){: external}.
 - [Event Notifications](/docs/event-notifications?topic=event-notifications-getting-started)
-- [Event Notifications destinations](/docs/event-notifications?topic=event-notifications-en-destinations-servicenow)
+- [Event Notifications destinations](/docs/event-notifications?topic=event-notifications-en-destination)
 - [IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-getting-started)
 - [Application Monitoring](/docs/monitoring?topic=monitoring-getting-started)
 

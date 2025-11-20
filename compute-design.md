@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2024
-lastupdated: "2024-05-02"
+  years: 2025
+lastupdated: "2025-11-20"
 
 subcollection: pattern-webapp-openshift-vpc
 
@@ -57,7 +57,7 @@ The following general resource consumption guidance for common microservice work
 For any additional workloads like the integrated services, OEM services, and add-on workloads, additional cluster resources are required. The sizing needs to be planned by working with the third-party vendor and it must be accounted for in the cluster capacity planning.
 {: note}
 
-Also, for stateful applications with shared or persistent storage needs, consider the worker pool requirements for software-defined storage (SDS) solutions such as [Portworx](/docs/openshift?topic=openshift-storage_portworx_about) or [Red Hat OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep). A software-defined storage solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster.
+Also, for stateful applications with shared or persistent storage needs, consider the worker pool requirements for software-defined storage (SDS) solutions such as [Red Hat OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep). A software-defined storage solution abstracts storage devices of various types, and sizes that are attached to the worker nodes in your cluster.
 
 The level of availability set up for the cluster impacts coverage from the [IBM Cloud HA service level agreement terms](/docs/overview?topic=overview-slas).
 
@@ -97,13 +97,16 @@ Use case sizing decision:
   - Cluster: 58 vCPU (53 vCPU \* 1.1)
 
   1. One of the client requirements for the solution is highly available persistent storage. There are stateful applications and a containerized Redis database is being used for event store and message queue purposes.
-  2. To meet this requirement, the IBM Cloud [Portworx Enterprise](https://cloud.ibm.com/catalog/services/portworx-enterprise){: external} service is used which provides a software-defined storage solution for the e-commerce workload. A separate worker pool is used for the storage nodes. This allows for disaggregated scaling of the e-commerce worker nodes to meet demand changes that are provisioned for each cluster.
-  3. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+  2. To meet this requirement, the IBM Cloud [Red Hat OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep) service is used which provides a software-defined storage solution for the e-commerce workload. A separate worker pool is used for the storage nodes. This allows for disaggregated scaling of the e-commerce worker nodes to meet demand changes that are provisioned for each cluster.
+  3. To ensure high availability, spread the ODF cluster across failure domains. This distribution helps minimize the impact of node failures and maintain the overall stability of the cluster.
 
   Use case size decision for storage worker pool:
   - A separate storage worker pool of three 4 vCPU x 16 GB memory worker nodes is added to the three Red Hat OpenShift clusters.
   
-The worker node size represents a minimum worker node flavor for Portworx and specific deployment strategy and sizing is not considered under this pattern.
+The worker node size represents a minimum worker node flavor for ODF and specific deployment strategy and sizing is not considered under this pattern.
+{: note}
+
+For a detailed analysis of storage requirements, the [Sizing Tool]{https://sizer.ocs.ninja/index.html#/workloads}{: external} to determine your storage capacity needed. You can also use the official [Red Hat sizing tool]{https://access.redhat.com/labsinfo/ocsst}{: external}
 {: note}
 
 4. Determine the optimal worker node size and quantity for the e-commerce worker pool.

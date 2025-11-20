@@ -57,3 +57,10 @@ keywords:
 - [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks)
 - [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 - [IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started)
+
+## Storage References
+{: #storage-references}
+
+- [File Storage for VPC](/docs/vpc?topic=vpc-file-storage-vpc-about)
+- [File Storage - Zonal File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#zonal-file-storage-overview)
+- [File Storage - Regional File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview)

@@ -8,6 +8,7 @@ subcollection: pattern-webapp-openshift-vpc
 keywords:
 ---
 # Architecture decisions for resiliency
+{: #resiliency-decisions}
 
 The following are resiliency architecture decisions for the Red Hat OpenShift on VPC cluster pattern.
 

@@ -11,7 +11,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Deploying a Red Hat OpenShift VPC multizone architecture
-
 {: #roks-vpc-mz-da}
 
 The following deployment guide outlines deploying a single region Red Hat OpenShift architecture in a multizone resilient configuration, specifically in three availability zones. The deployment is based on an existing deployable architecture template, as well as a series of customizations to tailor the setup to the specific requirements for your environment.
@@ -19,7 +18,6 @@ The following deployment guide outlines deploying a single region Red Hat OpenSh
 This is designed for customers who need a scalable, multizone Kubernetes infrastructure with the flexibility of customizations after the initial deployment of the base deployable architecture. It allows for adapting various components, such as networking and security, to better suit individual business needs after the foundational architecture has been established.
 
 ## Before you begin
-
 {: #roks-vpc-mz-prereqs}
 
 You need the following items to deploy and configure this reference architecture:
@@ -31,7 +29,6 @@ You need the following items to deploy and configure this reference architecture
 * An understanding of the [Planning for the landing zone deployable architectures](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan).
 
 ## Provisioning the architecture
-
 {: #provision-roks-vpc-mz}
 
 1. Select the [VPC multi-zone region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region&interface=cli) that you want to provision in.
@@ -55,13 +52,11 @@ For access to the Red Hat OpenShift UI, create a [VPN](https://cloud.ibm.com/doc
 {: note}
 
 ## Post installation options
-
 {: #provision-vsi-bastion-host-software}
 
 To install and configure the bastion host software on a virtual server instance, complete the steps outlined in the [Bastion software installation guide](/docs/solution-tutorials?topic=solution-tutorials-vpc-secure-management-bastion-server).
 
 ### Provision Red Hat OpenShift Data Foundation
-
 {: #provision-odf-software-defined-storage}
 
 1. Complete the [Red Hat OpenShift Data Foundation for VPC ROKS Clusters prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#ocs-storage-vpc)
@@ -75,13 +70,11 @@ Be aware of the [limitation of Red Hat OpenShift Data Foundation](/docs/openshif
 {: note}
 
 ### Provision Privileged Access Gateway
-
 {: #provision-a-privileged-access-gateway}
 
 Provisioning Privileged Access Gateway is an alternative approach to configuring a bastion host on a VSI. For more information, see the [Privileged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi).
 
 ## Additional services
-
 {: #additonal-roks-vpx-mz-services}
 
 You can add additional services onto the 3-tier web application. The additional services include:

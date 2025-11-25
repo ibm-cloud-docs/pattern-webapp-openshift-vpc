@@ -106,7 +106,7 @@ Use case sizing decision:
 The worker node size represents a minimum worker node flavor for ODF and specific deployment strategy and sizing is not considered under this pattern.
 {: note}
 
-For a detailed analysis of storage requirements, the [Sizing Tool]{https://sizer.ocs.ninja/index.html#/workloads}{: external} to determine your storage capacity needed. You can also use the official [Red Hat sizing tool]{https://access.redhat.com/labsinfo/ocsst}{: external}
+For a detailed analysis of storage requirements, the [Sizing Tool](https://sizer.ocs.ninja/index.html#/workloads){: external} to determine your storage capacity needed. You can also use the official [Red Hat sizing tool](https://access.redhat.com/labsinfo/ocsst){: external}
 {: note}
 
 4. Determine the optimal worker node size and quantity for the e-commerce worker pool.

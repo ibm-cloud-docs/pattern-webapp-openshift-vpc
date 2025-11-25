@@ -3,7 +3,7 @@ copyright:
   years: 2025
 lastupdated: "2025-10-20"
 
-subcollection: web-application-on-openshift-vpc
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 ---
@@ -15,10 +15,9 @@ keywords:
 - [IBM Well-Architected Framework Resiliency Pillar](https://www.ibm.com/architectures/well-architected/resiliency){: external}.
 - [Implement a High Availability Architecture](/docs/resiliency?topic=resiliency-high-availability-design&locale=en)
 - [Application Monitoring](/docs/monitoring?topic=monitoring-getting-started)
-- [Understanding Disaster Recovery](/docs/overview?topic=overview-understanding-dr)
 - [Designing an architecture for your application resiliency objectives](https://www.ibm.com/architectures/well-architected/resiliency){: external}.
 - [Sizing your Red Hat OpenShift on IBM Cloud Cluster environment](/docs/openshift?topic=openshift-strategy)
-- [Disaster Recovery on VPC](/docs/ha-infrastructure?topic=ha-infrastructure-ha-dr-backup-restore)
+- [Disaster Recovery on VPC](/docs/resiliency?topic=resiliency-dr-approaches)
 - [Resiliency on IBM Cloud](/docs/resiliency?topic=resiliency-resiliency-overview)
 - [High Availability on IBM Cloud](/docs/resiliency?topic=resiliency-understanding-ha)
 - [Backup for VPC](/docs/vpc?topic=vpc-backup-service-about)

@@ -67,7 +67,7 @@ To install and configure the bastion host software on a virtual server instance,
 1. Complete the [Red Hat OpenShift Data Foundation for VPC ROKS Clusters prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#ocs-storage-vpc)
 2. Refer to best practices when [installing and managing ODF](/docs/openshift?topic=openshift-ocs-storage-prep&interface=ui#odf-best-practices)
 3. Follow and complte the steps for installing [Red Hat OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#install-odf-console-vpc)
-4. Follow the steps to complete the app deployment which uses the ODF what are out line in [deploying an app on OpenShift Data Foundation](docs/openshift?topic=openshift-odf-deploy-app)
+4. Follow the steps to complete the app deployment which uses the ODF what are out line in [deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app)
 5. Additionally, for scaling ODF follow the steps in the [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#odf-scaling)
 6. For increasing the storage capacity in your storage cluster follow the steps in [Expanding ODF by adding worker nodes in VPC Cluster](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#odf-vpc-add-worker-nodes)
 

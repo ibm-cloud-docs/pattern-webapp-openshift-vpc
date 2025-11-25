@@ -83,7 +83,7 @@ Red Hat OpenShift Data Foundation (ODF) is a **software-defined storage solution
 Deploying Red Hat OpenShift Data Foundation for VPC ROKS cluster in IBM Cloud refer this [link](/docs/pattern-webapp-openshift-vpc?topic=pattern-webapp-openshift-vpc-compute-design)
 {: note}
 
-#### Usecases
+#### Use cases
 
 #### **1. Database Storage**
 

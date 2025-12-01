@@ -1,12 +1,13 @@
 ---
 copyright:
-  years: 2024
-lastupdated: "2024-04-29"
+  years: 2025
+lastupdated: "2025-11-20"
 
-subcollection: 
+subcollection:
 
 keywords:
 ---
+
 {{site.data.keyword.attribute-definition-list}}
 
 # Storage design
@@ -17,16 +18,14 @@ The following provides an in-depth view of the different storage types and solut
 ## Storage types
 {: #storage-types}
 
-
 ### IBM Cloud Block Storage
 {: #block-storage-types}
 
 IBM Cloud Block Storage on Kubernetes offers persistent storage for containerized applications, ensuring data durability and scalability. It seamlessly integrates with Kubernetes clusters, providing dynamic provisioning, snapshots, and encryption. This enables efficient management and utilization of storage resources within the Kubernetes environment, enhancing application performance and reliability. For more information, see [Block Storage for VPC documentation](/docs/openshift?topic=openshift-vpc-block).
 
-Review the following use cases for IBM Cloud Block Storage: 
+Review the following use cases for IBM Cloud Block Storage:
 
 * Stateful Applications: The IBM Cloud Block Storage is ideal for deploying stateful applications like databases (for example, MySQL, PostgreSQL) in Kubernetes clusters.
-
 * Data Analytics Workloads: When running data analytics workloads, you often need to process and store large volumes of data.
 
 ### IBM Cloud Object Storage
@@ -34,7 +33,7 @@ Review the following use cases for IBM Cloud Block Storage:
 
 IBM Cloud's Object Storage plug-in optimizes Kubernetes for seamless data management with IBM Cloud Object Storage. Using IBM's robust storage service, it simplifies integration with cloud-native apps, offering distributed, geo-redundant storage. This pattern caters efficiently to diverse Kubernetes storage needs, enabling effortless provisioning, management, and dynamic resource allocation, streamlining administration. This type of storage volume is not suitable for write-intensive workloads, random write operations, incremental data updates, or transaction databases. For more information surrounding IBM Cloud Object Storage, see the following [Setting up IBM Cloud Object Storage](/docs/openshift?topic=openshift-storage-cos-understand).
 
-Review the following use cases for IBM Cloud Object Storage: 
+Review the following use cases for IBM Cloud Object Storage:
 
 * Data Backup and Archival: IBM Cloud Object Storage facilitates data backup and archival, crucial for scenarios like Kubernetes-based e-commerce apps. Automated backups ensure data durability and quick recovery.
 * Media Storage for Content Delivery: Content delivery applications, such as video streaming platforms, require efficient and scalable media storage. With the IBM Cloud Object Storage pattern, you can store media assets like videos, images, and audio files. When a user requests media content, Kubernetes can retrieve it from IBM Cloud Object Storage and deliver it seamlessly to the user, ensuring a smooth streaming experience.
@@ -43,7 +42,7 @@ Review the following use cases for IBM Cloud Object Storage:
 ### IBM Cloud Databases
 {: #database-types}
 
-IBM Cloud Databases simplify storage deployment on IBM Cloud Red Hat OpenShift environment, that uses its services for seamless experiences in provisioning, scaling, and maintenance. Supporting PostgreSQL, MySQL, Redis, and MongoDB, it offers automated backups, high availability, and security, enabling focus on applications rather than infrastructure. For more information, see [IBM Cloud Database Services](https://www.ibm.com/cloud/databases){: external}.
+IBM Cloud Databases simplify storage deployment on IBM Cloud Red Hat OpenShift environment, that uses its services for seamless experiences in provisioning, scaling, and maintenance. Supporting PostgreSQL, MySQL, Redis, and MongoDB, it offers automated backups, high availability, and security, enabling focus on applications rather than infrastructure. For more information, see [IBM Cloud Database Services](https://www.ibm.com/products/cloud-databases){: external}.
 
 Review the following use cases for IBM Cloud Databases:
 
@@ -51,26 +50,50 @@ Review the following use cases for IBM Cloud Databases:
 * Scalable Web Applications:  IBM Cloud Databases automatically scale for variable web app traffic. For example, during flash sales, Kubernetes scales the database to handle increased traffic.
 
 ## Software-defined storage (SDS) solution
-
-### Portworx
-{: #portworx-types}
-
-Portworx is a software-defined storage (SDS) solution that transforms commodity hardware into a robust storage cluster. Portworx provides a high available software-defined storage solution to be used for the local persistent storage for the containerized stateful application across multiple zones for this solution. Due to its rich feature set and stability, Portworx was selected over other storage solutions like ODF and Ceph. Instead of having to manually define hooks and other configurations like ODF with OADP for backups, Portworx can work with such applications out of the box. As ODF with OADP matures, it gains the features and stability that Portworx currently has.
-
-For more information, see [About Portworx](/docs/openshift?topic=openshift-storage_portworx_about){: external}.
-
-![A diagram of a workflow Description automatically generated](image/Merged_Reference_OpenShift-storage.drawio.svg){: caption="Storage design for web application deployment" caption-side="bottom"}
-
-Review the following use cases for provisioning Portworx in a multizone cluster:
-
-* Database Storage: Enterprises running databases like PostgreSQL or MongoDB on Kubernetes can use Portworx for high-performance and resilient storage. For instance, a financial services company can use Portworx to ensure that their database workloads are always available and can be scaled up or down based on demand without any data loss.
-* Hybrid and Multi-Cloud Deployments: Organizations can use Portworx for seamless data mobility across different cloud environments. For example, a retail company might deploy their Kubernetes clusters in both IBM Cloud and another cloud provider, by using Portworx for consistent and secure data access across these platforms.
-* Disaster Recovery: Portworx facilitates efficient disaster recovery strategies. An e-commerce platform can use Portworx to replicate data across multiple regions, ensuring that if a regional outage occurs, their services remain uninterrupted.
-
-Another useful software-defined storage (SDS) solution is Red Hat OpenShift Data Foundation (ODF).
-{: note}
+{: #sds-solution}
 
 ### Red Hat OpenShift Data Foundation
 {: #openshift-types}
 
-Red Hat OpenShift Data Foundation although not chosen for this particular deployment, is a promising solution in its own right. As it evolves, it is anticipated to provide similar benefits to Portworx, including high availability and software-defined storage capabilities. With ODF's continued development, it is likely to offer easier integration with monitoring, logging, and encryption tools, streamlining the deployment process further. For more information, see [Red Hat OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+Red Hat OpenShift Data Foundation (ODF) is a **software-defined storage solution** designed to provide **persistent, scalable, and highly available storage** for containerized applications running on Red Hat OpenShift. It enables organizations to manage data seamlessly across hybrid and multi-cloud environments, ensuring performance, resilience, and security for modern workloads. For more information, see [Red Hat OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+
+#### Key Features
+{: #odf-key-features}
+
+* **Unified Storage Platform:** Supports block, file, and object storage for diverse application needs.
+* **Scalability & High Availability:** Built on Ceph technology to deliver elastic scaling and fault tolerance.
+* **Integrated with OpenShift:** Provides native integration for Kubernetes-based deployments.
+* **Data Services:** Includes features like encryption, compression, and replication for enterprise-grade reliability.
+* **Hybrid Cloud Ready:** Enables data mobility across on-premises and cloud environments.
+
+#### Architecture
+{: #odf-architecture}
+
+![ODF Architecture](./image/ODF_Architecture.svg){: caption="Reference architecture for Red Hat OpenShift Data Foundation" caption-side="bottom"}
+
+1. **OpenShift Data Foundation storage classes:** When you deploy ODF, the ODF operator creates File, Block, and Object storage classes in your cluster. Reference these storage classes in your PVCs and to claim storage for your apps.
+2. **OSD Block Storage:** These devices provide application storage in your cluster. Each OSD is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. In VPC clusters, your OSD block storage devices are dynamically provisioned by using the Block Storage for VPC driver. In Satellite clusters, you can use local volumes on your worker nodes, or dynamically provision block storage devices by using a block storage driver that supports dynamic provisioning. In Classic clusters, the OSD block devices are local disks on your worker nodes. When you deploy ODF, each device is mounted by an OSD pod. The total storage that is available to your applications is equal to the `osdSize` multiplied by the `numOfOsd`.
+3. **Object Storage Daemon (OSD) pods:** The OSD pods manage data placement and replication across your storage devices.
+4. **Monitor (Mon) pods:** The Monitor pods keep a map of your OpenShift Data Foundation storage cluster and monitor storage cluster health.
+5. **Monitor (Mon) block storage device:** The monitor storage devices are the underlying storage devices for the monitor pods. Each monitor device is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device provides storage to a monitor pod.
+
+Deploying Red Hat OpenShift Data Foundation for VPC ROKS cluster in IBM Cloud refer this [link](/docs/pattern-webapp-openshift-vpc?topic=pattern-webapp-openshift-vpc-compute-design)
+{: note}
+
+#### Use cases
+{: #odf-use-cases}
+
+#### **1. Database Storage**
+{: #odf-database}
+
+Enterprises running databases like **PostgreSQL** or **MongoDB** on Kubernetes can leverage **Red Hat OpenShift Data Foundation** for **high-performance, resilient, and persistent storage** . For example, a financial services company can use ODF to ensure their database workloads remain **highly available** and can **scale up or down on demand** without any risk of data loss.
+
+#### **2. Hybrid and Multi-Cloud Deployments**
+{: #odf-multi-cloud}
+
+Organizations can use **OpenShift Data Foundation** to enable **consistent and secure data access** across hybrid and multi-cloud environments. For instance, a retail company deploying Kubernetes clusters in **IBM Cloud** and another cloud provider can rely on ODF for **seamless data mobility** , ensuring operational continuity across platforms.
+
+#### **3. Disaster Recovery**
+{: #odf-dr}
+
+ODF supports **efficient disaster recovery strategies** by replicating data across multiple clusters or regions. An e-commerce platform can use ODF to ensure that, in the event of a regional outage, services remain **uninterrupted** , safeguarding customer experience and business continuity.

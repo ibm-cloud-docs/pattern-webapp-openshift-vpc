@@ -34,9 +34,9 @@ Create a multizone cluster to distribute workloads across multiple worker nodes 
 - Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically in each zone of the cluster. This was the selected deployment model for the e-commerce use case as it provides the required service level availability and workload management capabilities.
 
 ## Cross regional active to active cluster deployment
-{: deployment-cross-regional}
+{: #deployment-cross-regional}
 
-For solutions that require high availability and capacity management, two active clusters can be deployed with the workload distributed by using a global load balancer. 
+For solutions that require high availability and capacity management, two active clusters can be deployed with the workload distributed by using a global load balancer.
 if there's a cluster failure in one region, the second cluster can be scaled to manage the full workload. For the e-commerce use case, it was decided that multiregion deployment was not required with the additional costs factored into the decision.
 
 ## Service Level Agreements

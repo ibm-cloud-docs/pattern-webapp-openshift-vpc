@@ -3,7 +3,7 @@ copyright:
   years: 2025
 lastupdated: "2025-10-20"
 
-subcollection: web-application-on-openshift-vpc
+subcollection: pattern-webapp-openshift-vpc
 
 keywords:
 ---
@@ -15,10 +15,9 @@ keywords:
 - [IBM Well-Architected Framework Resiliency Pillar](https://www.ibm.com/architectures/well-architected/resiliency){: external}.
 - [Implement a High Availability Architecture](/docs/resiliency?topic=resiliency-high-availability-design&locale=en)
 - [Application Monitoring](/docs/monitoring?topic=monitoring-getting-started)
-- [Understanding Disaster Recovery](/docs/overview?topic=overview-understanding-dr)
 - [Designing an architecture for your application resiliency objectives](https://www.ibm.com/architectures/well-architected/resiliency){: external}.
 - [Sizing your Red Hat OpenShift on IBM Cloud Cluster environment](/docs/openshift?topic=openshift-strategy)
-- [Disaster Recovery on VPC](/docs/ha-infrastructure?topic=ha-infrastructure-ha-dr-backup-restore)
+- [Disaster Recovery on VPC](/docs/resiliency?topic=resiliency-dr-approaches)
 - [Resiliency on IBM Cloud](/docs/resiliency?topic=resiliency-resiliency-overview)
 - [High Availability on IBM Cloud](/docs/resiliency?topic=resiliency-understanding-ha)
 - [Backup for VPC](/docs/vpc?topic=vpc-backup-service-about)
@@ -52,8 +51,16 @@ keywords:
 - [Account types](/docs/account?topic=account-accounts&interface=ui)
 - [How IBM Cloud IAM works](/docs/account?topic=account-iamoverview)
 - [Best practices for organizing resources and assigning access](/docs/account?topic=account-account_setup&interface=ui)
-- [Red Hat Bastion node setup](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
+- [Red Hat Bastion node setup](/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
 - [Encryption overview](/docs/openshift?topic=openshift-encryption)
 - [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks)
 - [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 - [IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started)
+
+## Storage References
+{: #storage-references}
+
+- [File Storage for VPC](/docs/vpc?topic=vpc-file-storage-vpc-about)
+- [File Storage - Zonal File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#zonal-file-storage-overview)
+- [File Storage - Regional File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview)
+- [Ceph. The future of storage](https://ceph.io/discover/){: external}

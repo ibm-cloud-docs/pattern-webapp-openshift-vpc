@@ -32,7 +32,7 @@ You need the following items to deploy and configure this reference architecture
 {: #provision-roks-vpc-mz}
 
 1. Select the [VPC multi-zone region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region&interface=cli) that you want to provision in.
-2. Provision the [Red Hat OpenShift VPC Multizone Deployable architecture](https://cloud.ibm.com/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra){: external}
+2. Provision the [Red Hat OpenShift VPC Multizone Deployable architecture](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra)
 3. Add required and optional parameters
 4. Provision a VSI within a subnet on the Red Hat OpenShift landing zone by using the [VSI extension Deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra)
 5. Add required and optional parameters and deploy.
@@ -48,7 +48,7 @@ For the VSI extension deployable architecture the following parameters must be s
 * Required tab: `ssh_public_key`, `region`, `boot_volume_encryption_key`. Use the CRN from kms instance in the Red Hat OpenShift deployable architecture and `vpc_id` from the Red Hat OpenShift deployable architecture.
 * Optional tab: `subnet_names`. Use this to install a single bastion host on 1 virtual server instance which covers all subnets, specify the names of a subnet across the three zones, for example, vsi-zone-1, vsi-zone-2, vsi-zone-3.
 
-For access to the Red Hat OpenShift UI, create a [VPN](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-create-server&interface=ui).
+For access to the Red Hat OpenShift UI, create a [VPN](/docs/vpc?topic=vpc-vpn-create-server&interface=ui).
 {: note}
 
 ## Post installation options
@@ -72,7 +72,7 @@ Be aware of the [limitation of Red Hat OpenShift Data Foundation](/docs/openshif
 ### Provision Privileged Access Gateway
 {: #provision-a-privileged-access-gateway}
 
-Provisioning Privileged Access Gateway is an alternative approach to configuring a bastion host on a VSI. For more information, see the [Privileged Access Gateway deployment guide](/docs/allowlist/privileged-access-gateway?topic=privileged-access-gateway-pag-prep-vsi).
+Provisioning Privileged Access Gateway is an alternative approach to configuring a bastion host on a VSI. For more information, see the [Privileged Access Gateway deployment guide](/docs/privileged-access-gateway?topic=privileged-access-gateway-access-vs).
 
 ## Additional services
 {: #additonal-roks-vpx-mz-services}

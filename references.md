@@ -51,7 +51,7 @@ keywords:
 - [Account types](/docs/account?topic=account-accounts&interface=ui)
 - [How IBM Cloud IAM works](/docs/account?topic=account-iamoverview)
 - [Best practices for organizing resources and assigning access](/docs/account?topic=account-account_setup&interface=ui)
-- [Red Hat Bastion node setup](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
+- [Red Hat Bastion node setup](/docs/vmwaresolutions?topic=vmwaresolutions-openshift-runbook-runbook-bastion-intro)
 - [Encryption overview](/docs/openshift?topic=openshift-encryption)
 - [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks)
 - [Setting up an image registry](/docs/openshift?topic=openshift-registry)
@@ -63,3 +63,4 @@ keywords:
 - [File Storage for VPC](/docs/vpc?topic=vpc-file-storage-vpc-about)
 - [File Storage - Zonal File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#zonal-file-storage-overview)
 - [File Storage - Regional File Share](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview)
+- [Ceph. The future of storage](https://ceph.io/discover/){: external}
